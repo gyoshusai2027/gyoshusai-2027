@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>暁秀祭 2027</title>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; color: white; background-color: #000; }
+
+        /* メインの背景部分 */
+        .hero {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            /* background.jpg という名前の画像をアップロードしてください */
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ナビゲーション */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+        }
+        .logo { font-size: 1.2rem; font-weight: bold; }
+        nav { display: flex; gap: 10px; }
+        nav a {
+            text-decoration: none;
+            color: white;
+            border: 1px solid white;
+            padding: 8px 20px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        nav a:hover { background: white; color: black; }
+
+        /* 中央のメイン文字 */
+        .main-visual {
+            margin: auto;
+            text-align: center;
+        }
+        .sub-title { font-size: 2rem; letter-spacing: 0.5rem; }
+        .main-title { font-size: 6rem; font-weight: bold; margin: 10px 0; }
+        .date { font-size: 1.5rem; margin-bottom: 30px; }
+
+        /* カウントダウン部分 */
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            gap: 15px;
+            font-size: 1.2rem;
+        }
+        .number { font-size: 3rem; font-weight: bold; }
+        .unit { font-size: 1rem; margin-right: 10px; }
+
+        /* コンテンツエリア（地図など） */
+        .content-section {
+            background: white;
+            color: #333;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .map-placeholder {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #eee;
+            padding: 100px;
+            border: 2px dashed #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <header>
+            <div class="logo">暁秀祭2027</div>
+            <nav>
+                <a href="#">スローガン</a>
+                <a href="#">スケジュール</a>
+                <a href="#map">フロアマップ</a>
+                <a href="#">アクセス</a>
+            </nav>
+        </header>
+
+        <div class="main-visual">
+            <p class="sub-title">暁秀祭</p>
+            <h1 class="main-title">文化の部</h1>
+            <p class="date">2027/05/16</p>
+            
+            <div class="countdown-container">
+                <span>残り</span>
+                <span class="number" id="days">--</span><span class="unit">週</span>
+                <span class="number" id="hours">--</span><span class="unit">日</span>
+                <span class="number" id="mins">--</span><span class="unit">時間</span>
+            </div>
+        </div>
+    </div>
+
+    <section class="content-section" id="map">
+        <h2>フロアマップ</h2>
+        <div class="map-placeholder">
+            【ここに地図画像をアップロードして表示】
+        </div>
+    </section>
+
+    <script>
+        function updateCountdown() {
+            // 2027年5月16日 9:00に設定
+            const targetDate = new Date("May 16, 2027 09:00:00").getTime();
+            const now = new Date().getTime();
+            const diff = targetDate - now;
+
+            if (diff > 0) {
+                const totalDays = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const weeks = Math.floor(totalDays / 7);
+                const days = totalDays % 7;
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+                document.getElementById("days").innerText = weeks;
+                document.getElementById("hours").innerText = days;
+                document.getElementById("mins").innerText = hours;
+            } else {
+                document.querySelector(".countdown-container").innerHTML = "開催中！";
+            }
+        }
+
+        // 1秒ごとに更新
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // 初回実行
+    </script>
+
+</body>
+</html>
