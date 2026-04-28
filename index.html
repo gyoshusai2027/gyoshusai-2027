@@ -23,7 +23,7 @@ color:#222;
 line-height:1.6;
 }
 
-/* ヒーロー */
+/* メイン背景 */
 .hero{
 min-height:100vh;
 background:
@@ -72,7 +72,7 @@ background:#fff;
 color:#003366;
 }
 
-/* 中央文字 */
+/* 中央 */
 .center{
 margin:auto;
 text-align:center;
@@ -80,10 +80,9 @@ padding:20px;
 }
 
 .sub{
-font-size:1.2rem;
-letter-spacing:8px;
-margin-bottom:10px;
-opacity:.95;
+font-size:1.1rem;
+letter-spacing:6px;
+margin-bottom:12px;
 }
 
 .main{
@@ -95,7 +94,7 @@ text-shadow:0 4px 20px rgba(0,0,0,.35);
 
 .date{
 font-size:1.3rem;
-margin-top:10px;
+margin-top:12px;
 margin-bottom:35px;
 }
 
@@ -111,8 +110,7 @@ background:rgba(255,255,255,.16);
 backdrop-filter:blur(6px);
 padding:18px 22px;
 border-radius:18px;
-min-width:95px;
-box-shadow:0 10px 30px rgba(0,0,0,.15);
+min-width:90px;
 }
 
 .num{
@@ -122,7 +120,6 @@ font-weight:800;
 
 .label{
 font-size:.9rem;
-margin-top:4px;
 }
 
 /* セクション */
@@ -147,28 +144,16 @@ box-shadow:0 10px 30px rgba(0,0,0,.08);
 margin-top:20px;
 }
 
-.schedule-list{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:18px;
-margin-top:20px;
-}
-
-.item{
-background:#f3f8ff;
-padding:20px;
-border-radius:14px;
-}
-
-.map{
+/* Google Map */
+.map-frame{
 width:100%;
+height:450px;
 border:none;
 border-radius:18px;
-min-height:420px;
 box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
-/* フッター */
+/* footer */
 footer{
 margin-top:40px;
 background:#003366;
@@ -196,7 +181,7 @@ font-size:1.05rem;
 }
 
 .box{
-min-width:80px;
+min-width:78px;
 padding:15px;
 }
 
@@ -213,14 +198,14 @@ padding:15px;
 
 <nav>
 <a href="#about">概要</a>
-<a href="#schedule">企画</a>
-<a href="#map">マップ</a>
-<a href="#access">アクセス</a>
+<a href="#plan">企画</a>
+<a href="#map">アクセス</a>
+<a href="#contact">案内</a>
 </nav>
 </header>
 
 <div class="center">
-<div class="sub">AKATSUKI FESTIVAL</div>
+<div class="sub">GYOSHU SPRING FESTIVAL 2027</div>
 <div class="main">暁秀祭</div>
 <div class="date">2027年5月16日（日）開催</div>
 
@@ -253,36 +238,34 @@ padding:15px;
 <section id="about">
 <h2>開催概要</h2>
 <div class="card">
-地域の皆さまへ感謝を込めて開催する暁秀祭。<br>
-展示・模擬店・ステージ企画など、多くの催しをご用意しています。<br>
-ぜひご来場ください。
+加藤学園暁秀中学校・高等学校で開催される文化祭です。<br>
+展示・模擬店・発表など、たくさんの企画を予定しています。
 </div>
 </section>
 
-<section id="schedule">
-<h2>企画案内</h2>
-
-<div class="schedule-list">
-<div class="item">クラス展示</div>
-<div class="item">模擬店エリア</div>
-<div class="item">体育館ステージ</div>
-<div class="item">部活動発表</div>
+<section id="plan">
+<h2>イベント内容</h2>
+<div class="card">
+クラス展示 / 模擬店 / ステージ発表 / 部活動展示
 </div>
-
 </section>
 
 <section id="map">
-<h2>フロアマップ</h2>
-<div class="card">
-ここに校内マップ画像を掲載できます
-</div>
+<h2>アクセスマップ</h2>
+
+<iframe
+class="map-frame"
+src="https://www.google.com/maps?q=加藤学園暁秀中学校高等学校&output=embed"
+loading="lazy">
+</iframe>
+
 </section>
 
-<section id="access">
-<h2>アクセス</h2>
+<section id="contact">
+<h2>ご案内</h2>
 <div class="card">
-加藤学園暁秀中学校・高等学校<br>
-静岡県沼津市岡宮字寺林1250
+駐車場には限りがあります。<br>
+公共交通機関または乗り合わせにご協力ください。
 </div>
 </section>
 
