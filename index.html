@@ -3,344 +3,1623 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>暁秀祭2027 公式サイト</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
 
-html{scroll-behavior:smooth;}
+/* =========================
+   基本設定
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
 
 body{
-font-family:"Yu Gothic","Hiragino Sans",sans-serif;
-background:#fff;
-color:#222;
-line-height:1.6;
-overflow-x:hidden;
+  font-family:"Yu Gothic","Hiragino Sans",sans-serif;
+  background:#f7fbff;
+  color:#222;
+  overflow-x:hidden;
 }
+
+
+/* =========================
+   トップ
+========================= */
 
 .hero{
-min-height:100vh;
-background:
-linear-gradient(rgba(0,30,70,.45),rgba(0,0,0,.45)),
-url("background.jpg");
-background-size:cover;
-background-position:center;
-display:flex;
-flex-direction:column;
-color:#fff;
+  min-height:100vh;
+
+  background:
+    radial-gradient(circle at 10% 20%,
+      rgba(255,255,255,.25) 0 30px,
+      transparent 31px),
+
+    radial-gradient(circle at 90% 30%,
+      rgba(255,255,255,.18) 0 45px,
+      transparent 46px),
+
+    linear-gradient(
+      135deg,
+      #0066a8,
+      #008dcc 50%,
+      #35b8d8
+    );
+
+  color:#fff;
+  position:relative;
+
+  display:flex;
+  flex-direction:column;
 }
 
+
+/* =========================
+   ヘッダー
+========================= */
+
 header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:24px 40px;
-flex-wrap:wrap;
+  width:100%;
+  padding:18px 6%;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  position:absolute;
+  top:0;
+  left:0;
+
+  z-index:10;
 }
 
 .logo{
-font-size:1.4rem;
-font-weight:700;
-letter-spacing:2px;
+  font-size:1.4rem;
+  font-weight:900;
+  letter-spacing:.08em;
 }
 
-nav{
-display:flex;
-gap:12px;
-flex-wrap:wrap;
+header nav{
+  display:flex;
+  gap:10px;
 }
 
-nav a{
-color:#fff;
-text-decoration:none;
-padding:10px 18px;
-border:1px solid rgba(255,255,255,.7);
-border-radius:30px;
-transition:.3s;
+header nav a{
+  color:#fff;
+  text-decoration:none;
+
+  font-weight:700;
+
+  padding:9px 15px;
+
+  border-radius:999px;
+
+  transition:.25s;
 }
 
-nav a:hover{
-background:#fff;
-color:#003366;
+header nav a:hover{
+  background:rgba(255,255,255,.2);
+  transform:translateY(-2px);
 }
+
+
+/* =========================
+   トップ中央
+========================= */
 
 .center{
-margin:auto;
-text-align:center;
-padding:20px;
+  margin:auto;
+  text-align:center;
+
+  padding:100px 20px 50px;
 }
 
-.sub{
-font-size:1.1rem;
-letter-spacing:6px;
-margin-bottom:12px;
+.small-title{
+  font-size:1rem;
+  letter-spacing:.25em;
+  font-weight:700;
+
+  margin-bottom:15px;
 }
 
-.main{
-font-size:clamp(3rem,10vw,7rem);
-font-weight:900;
-text-shadow:0 4px 20px rgba(0,0,0,.4);
+.center h1{
+  font-size:clamp(3rem,9vw,7rem);
+  line-height:1;
+
+  font-weight:900;
+
+  text-shadow:
+    0 8px 20px rgba(0,0,0,.15);
+}
+
+.center h1 span{
+  display:block;
+
+  font-size:.32em;
+  letter-spacing:.25em;
+
+  margin-top:18px;
 }
 
 .date{
-font-size:1.3rem;
-margin:14px 0 30px;
+  margin-top:30px;
+
+  font-size:1.1rem;
+  font-weight:700;
 }
 
+
+/* =========================
+   カウントダウン
+========================= */
+
 .countdown{
-display:flex;
-justify-content:center;
-gap:18px;
-flex-wrap:wrap;
+  margin-top:25px;
+
+  display:flex;
+  justify-content:center;
+
+  gap:12px;
+
+  flex-wrap:wrap;
 }
 
 .box{
-background:rgba(255,255,255,.15);
-backdrop-filter:blur(6px);
-padding:18px 22px;
-border-radius:18px;
-min-width:90px;
+  min-width:80px;
+
+  padding:15px 10px;
+
+  background:rgba(255,255,255,.18);
+
+  border:
+    1px solid
+    rgba(255,255,255,.35);
+
+  border-radius:20px;
+
+  backdrop-filter:blur(5px);
 }
 
 .num{
-font-size:2rem;
-font-weight:800;
+  font-size:2rem;
+  font-weight:900;
 }
 
 .label{
-font-size:.9rem;
+  font-size:.8rem;
+  margin-top:3px;
 }
 
+
+/* =========================
+   トップボタン
+========================= */
+
 .top-buttons{
-margin-top:35px;
-display:flex;
-justify-content:center;
-gap:14px;
-flex-wrap:wrap;
+  margin-top:35px;
+
+  display:flex;
+  justify-content:center;
+
+  gap:12px;
+
+  flex-wrap:wrap;
 }
 
 .top-buttons a{
-background:#fff;
-color:#003366;
-text-decoration:none;
-padding:12px 22px;
-border-radius:30px;
-font-weight:700;
+  display:inline-block;
+
+  padding:13px 24px;
+
+  background:#fff;
+  color:#0066a8;
+
+  text-decoration:none;
+
+  border-radius:999px;
+
+  font-weight:900;
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,.15);
+
+  transition:.25s;
 }
+
+.top-buttons a:hover{
+  transform:
+    translateY(-4px)
+    scale(1.03);
+}
+
+
+/* =========================
+   メインタブ
+========================= */
+
+.main-tabs{
+  width:100%;
+
+  padding:22px 20px;
+
+  background:#fff;
+
+  position:sticky;
+  top:0;
+
+  z-index:9;
+
+  box-shadow:
+    0 5px 20px rgba(0,0,0,.08);
+}
+
+.main-tabs-inner{
+  max-width:1100px;
+
+  margin:auto;
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:10px;
+
+  flex-wrap:wrap;
+}
+
+.main-tabs a{
+  text-decoration:none;
+
+  color:#0066a8;
+
+  background:#eef9ff;
+
+  padding:11px 18px;
+
+  border-radius:999px;
+
+  font-weight:800;
+
+  border:2px solid transparent;
+
+  transition:.25s;
+}
+
+.main-tabs a:hover{
+  background:#0066a8;
+  color:#fff;
+
+  transform:translateY(-3px);
+}
+
+
+/* =========================
+   セクション
+========================= */
 
 section{
-padding:80px 20px;
-max-width:1100px;
-margin:auto;
+  max-width:1100px;
+
+  margin:auto;
+
+  padding:80px 20px;
 }
 
-h2{
-text-align:center;
-font-size:2rem;
-margin-bottom:28px;
-color:#003366;
+section h2{
+  text-align:center;
+
+  color:#0066a8;
+
+  font-size:2.2rem;
+
+  margin-bottom:12px;
 }
+
+.section-subtitle{
+  text-align:center;
+
+  color:#777;
+
+  margin-bottom:35px;
+}
+
+
+/* =========================
+   共通カード
+========================= */
 
 .grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:18px;
+  display:grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(220px,1fr)
+    );
+
+  gap:22px;
 }
 
-.item{
-background:#f4f8ff;
-padding:24px;
-border-radius:16px;
-text-align:center;
-font-weight:700;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
+.card{
+  background:#fff;
+
+  border-radius:25px;
+
+  padding:28px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+
+  border:
+    3px solid
+    #eef8ff;
+
+  transition:.25s;
 }
 
-.map-frame{
-width:100%;
-height:450px;
-border:none;
-border-radius:18px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
+.card:hover{
+  transform:translateY(-6px);
+
+  box-shadow:
+    0 15px 35px rgba(0,0,0,.12);
 }
 
-/* バス案内 */
+.card-icon{
+  font-size:2.5rem;
+
+  margin-bottom:12px;
+}
+
+.card h3{
+  color:#0066a8;
+
+  margin-bottom:10px;
+}
+
+.card p{
+  color:#555;
+
+  line-height:1.7;
+}
+
+
+/* =========================
+   クラス企画
+========================= */
+
+.class-card{
+  overflow:hidden;
+  padding:0;
+}
+
+.class-photo{
+  height:180px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #dff5ff,
+      #bceaff
+    );
+
+  display:flex;
+
+  justify-content:center;
+  align-items:center;
+
+  color:#5c9bb5;
+
+  font-weight:700;
+}
+
+.class-info{
+  padding:23px;
+}
+
+.class-info h3{
+  margin-bottom:10px;
+}
+
+.details{
+  margin-top:15px;
+
+  display:flex;
+
+  gap:8px;
+
+  flex-wrap:wrap;
+}
+
+.detail{
+  background:#eef9ff;
+
+  color:#0066a8;
+
+  padding:7px 11px;
+
+  border-radius:999px;
+
+  font-size:.9rem;
+
+  font-weight:700;
+}
+
+
+/* =========================
+   暁秀王・GGT
+========================= */
+
+.performer{
+  position:relative;
+}
+
+.performer .number{
+  position:absolute;
+
+  right:20px;
+  top:20px;
+
+  font-size:.85rem;
+
+  color:#aaa;
+}
+
+.performance-name{
+  font-size:1.1rem;
+
+  font-weight:800;
+
+  color:#0066a8;
+
+  margin-bottom:8px;
+}
+
+.performance-title{
+  font-size:1.25rem;
+
+  font-weight:900;
+}
+
+
+/* =========================
+   OP・ED
+========================= */
+
+.movie-card{
+  background:#fff;
+
+  border-radius:25px;
+
+  padding:25px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+}
+
+.movie-placeholder{
+  width:100%;
+
+  aspect-ratio:16/9;
+
+  background:#eaf8ff;
+
+  border-radius:18px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  color:#5792aa;
+
+  font-weight:700;
+}
+
+.movie-card h3{
+  margin-top:18px;
+
+  color:#0066a8;
+}
+
+
+/* =========================
+   ステージ
+========================= */
+
+.stage-card{
+  text-align:center;
+}
+
+
+/* =========================
+   アクセス
+========================= */
+
+.map-container{
+  width:100%;
+
+  margin-bottom:25px;
+
+  overflow:hidden;
+
+  border-radius:25px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.10);
+}
+
+.map-container iframe{
+  display:block;
+
+  width:100%;
+
+  height:450px;
+
+  border:0;
+}
+
+.access-box{
+  margin-top:25px;
+
+  background:#fff;
+
+  padding:30px;
+
+  border-radius:25px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+}
+
+.access-box h3{
+  color:#0066a8;
+
+  margin-bottom:12px;
+}
+
+
+/* =========================
+   バス
+========================= */
+
 .bus-box{
-background:#f8fbff;
-padding:30px;
-border-radius:18px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-margin-top:20px;
+  margin-top:25px;
+
+  background:#fff;
+
+  padding:30px;
+
+  border-radius:25px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
 }
 
 .bus-title{
-font-size:1.3rem;
-font-weight:700;
-color:#003366;
-margin-bottom:15px;
+  font-size:1.2rem;
+
+  font-weight:900;
+
+  color:#0066a8;
+
+  margin-bottom:20px;
 }
 
 .bus-line{
-margin-bottom:18px;
+  margin-bottom:25px;
+
+  padding:20px;
+
+  background:#f4fbff;
+
+  border-radius:18px;
 }
 
 .time{
-font-size:1.1rem;
-font-weight:700;
-color:#222;
-margin-top:8px;
+  margin-top:10px;
+
+  font-size:1.05rem;
+
+  font-weight:800;
 }
 
 .note{
-font-size:.95rem;
-color:#666;
-margin-top:18px;
+  color:#777;
+
+  font-size:.9rem;
 }
 
-footer{
-background:#003366;
-color:#fff;
-text-align:center;
-padding:30px;
-margin-top:40px;
+
+/* =========================
+   お知らせ
+========================= */
+
+.notice{
+  background:#fff;
+
+  padding:22px;
+
+  border-radius:20px;
+
+  margin-bottom:12px;
+
+  box-shadow:
+    0 7px 20px rgba(0,0,0,.06);
 }
+
+.notice-date{
+  color:#008dcc;
+
+  font-weight:800;
+
+  margin-bottom:5px;
+}
+
+
+/* =========================
+   フッター
+========================= */
+
+footer{
+  background:#00527f;
+
+  color:#fff;
+
+  text-align:center;
+
+  padding:35px 20px;
+
+  margin-top:30px;
+}
+
+
+/* =========================
+   スマホ
+========================= */
 
 @media(max-width:700px){
 
-header{
-justify-content:center;
-gap:15px;
-padding:20px;
+  header{
+    position:absolute;
+
+    padding:15px;
+  }
+
+  header nav{
+    display:none;
+  }
+
+  .center{
+    padding-top:110px;
+  }
+
+  .countdown{
+    gap:7px;
+  }
+
+  .box{
+    min-width:65px;
+
+    padding:10px 7px;
+  }
+
+  .num{
+    font-size:1.5rem;
+  }
+
+  .main-tabs{
+    position:relative;
+  }
+
+  .main-tabs-inner{
+    justify-content:flex-start;
+
+    overflow-x:auto;
+
+    flex-wrap:nowrap;
+
+    padding-bottom:5px;
+  }
+
+  .main-tabs a{
+    white-space:nowrap;
+
+    font-size:.85rem;
+  }
+
+  section{
+    padding:60px 16px;
+  }
+
+  section h2{
+    font-size:1.8rem;
+  }
+
+  .map-container iframe{
+    height:330px;
+  }
+
 }
 
-nav{
-justify-content:center;
-}
-
-.box{
-min-width:78px;
-padding:15px;
-}
-
-}
 </style>
 </head>
 
+
 <body>
+
+
+<!-- =========================
+     HERO
+========================= -->
 
 <div class="hero">
 
 <header>
-<div class="logo">暁秀祭2027</div>
 
-<nav>
-<a href="#event">企画</a>
-<a href="#map">アクセス</a>
-<a href="#bus">バス案内</a>
-</nav>
+  <div class="logo">
+    暁秀祭 2027
+  </div>
+
+  <nav>
+
+    <a href="#event">企画</a>
+
+    <a href="#king">暁秀王</a>
+
+    <a href="#ggt">GGT</a>
+
+    <a href="#movies">OP・ED</a>
+
+    <a href="#access">アクセス</a>
+
+  </nav>
+
 </header>
+
 
 <div class="center">
 
-<div class="sub">GYOSHU FESTIVAL 2027</div>
-<div class="main">暁秀祭</div>
-<div class="date">2027年5月16日（日）開催</div>
+  <div class="small-title">
+    GYOSHU FESTIVAL
+  </div>
 
-<div class="countdown">
-<div class="box"><div class="num" id="day">--</div><div class="label">日</div></div>
-<div class="box"><div class="num" id="hour">--</div><div class="label">時間</div></div>
-<div class="box"><div class="num" id="min">--</div><div class="label">分</div></div>
-<div class="box"><div class="num" id="sec">--</div><div class="label">秒</div></div>
+  <h1>
+
+    暁秀祭
+
+    <span>2027</span>
+
+  </h1>
+
+  <div class="date">
+    2027年5月16日（日）開催
+  </div>
+
+
+  <div class="countdown">
+
+    <div class="box">
+
+      <div
+        class="num"
+        id="day">
+        --
+      </div>
+
+      <div class="label">
+        日
+      </div>
+
+    </div>
+
+
+    <div class="box">
+
+      <div
+        class="num"
+        id="hour">
+        --
+      </div>
+
+      <div class="label">
+        時間
+      </div>
+
+    </div>
+
+
+    <div class="box">
+
+      <div
+        class="num"
+        id="min">
+        --
+      </div>
+
+      <div class="label">
+        分
+      </div>
+
+    </div>
+
+
+    <div class="box">
+
+      <div
+        class="num"
+        id="sec">
+        --
+      </div>
+
+      <div class="label">
+        秒
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="top-buttons">
+
+    <a href="#event">
+      🎪 企画を見る
+    </a>
+
+    <a href="#access">
+      📍 アクセス
+    </a>
+
+  </div>
+
 </div>
 
-<div class="top-buttons">
-<a href="#event">企画を見る</a>
-<a href="#map">アクセス</a>
-<a href="#bus">バス案内</a>
 </div>
 
+
+
+<!-- =========================
+     メインタブ
+========================= -->
+
+<div class="main-tabs">
+
+  <div class="main-tabs-inner">
+
+    <a href="#event">
+      🎪 クラス企画
+    </a>
+
+    <a href="#king">
+      👑 暁秀王
+    </a>
+
+    <a href="#ggt">
+      🎤 GGT
+    </a>
+
+    <a href="#movies">
+      🎬 OP・ED
+    </a>
+
+    <a href="#stage">
+      🎭 ステージ
+    </a>
+
+    <a href="#access">
+      📍 アクセス
+    </a>
+
+    <a href="#notice">
+      📢 お知らせ
+    </a>
+
+  </div>
+
 </div>
-</div>
+
+
+
+<!-- =========================
+     クラス企画
+========================= -->
 
 <section id="event">
-<h2>イベント内容</h2>
+
+<h2>
+  🎪 クラス企画
+</h2>
+
+<p class="section-subtitle">
+  各クラスの企画をチェック！
+</p>
+
+
 <div class="grid">
-<div class="item">クラス展示</div>
-<div class="item">模擬店エリア</div>
-<div class="item">体育館ステージ</div>
-<div class="item">部活動展示</div>
+
+
+  <div class="card class-card">
+
+    <div class="class-photo">
+      📷 写真準備中
+    </div>
+
+    <div class="class-info">
+
+      <h3>
+        ○年○組
+      </h3>
+
+      <p>
+        企画内容をここに掲載します。
+      </p>
+
+      <div class="details">
+
+        <div class="detail">
+          ⏱ 約20分
+        </div>
+
+        <div class="detail">
+          💰 200円
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="card class-card">
+
+    <div class="class-photo">
+      📷 写真準備中
+    </div>
+
+    <div class="class-info">
+
+      <h3>
+        ○年○組
+      </h3>
+
+      <p>
+        企画内容をここに掲載します。
+      </p>
+
+      <div class="details">
+
+        <div class="detail">
+          ⏱ 約15分
+        </div>
+
+        <div class="detail">
+          💰 無料
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="card class-card">
+
+    <div class="class-photo">
+      📷 写真準備中
+    </div>
+
+    <div class="class-info">
+
+      <h3>
+        ○年○組
+      </h3>
+
+      <p>
+        企画内容をここに掲載します。
+      </p>
+
+      <div class="details">
+
+        <div class="detail">
+          ⏱ 約30分
+        </div>
+
+        <div class="detail">
+          💰 100円
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
 </div>
-</section>
-
-<section id="map">
-<h2>アクセスマップ</h2>
-
-<iframe
-class="map-frame"
-src="https://www.google.com/maps?q=加藤学園暁秀中学校高等学校&output=embed"
-loading="lazy">
-</iframe>
 
 </section>
 
-<section id="bus">
-<h2>バスでのアクセス</h2>
+
+
+<!-- =========================
+     暁秀王
+========================= -->
+
+<section id="king">
+
+<h2>
+  👑 暁秀王
+</h2>
+
+<p class="section-subtitle">
+  出演者と演目をご紹介！
+</p>
+
+
+<div class="grid">
+
+
+  <div class="card performer">
+
+    <div class="number">
+      01
+    </div>
+
+    <div class="performance-name">
+      演者名
+    </div>
+
+    <div class="performance-title">
+      演目：○○○○
+    </div>
+
+  </div>
+
+
+  <div class="card performer">
+
+    <div class="number">
+      02
+    </div>
+
+    <div class="performance-name">
+      演者名
+    </div>
+
+    <div class="performance-title">
+      演目：○○○○
+    </div>
+
+  </div>
+
+
+  <div class="card performer">
+
+    <div class="number">
+      03
+    </div>
+
+    <div class="performance-name">
+      演者名
+    </div>
+
+    <div class="performance-title">
+      演目：○○○○
+    </div>
+
+  </div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     GGT
+========================= -->
+
+<section id="ggt">
+
+<h2>
+  🎤 GGT
+</h2>
+
+<p class="section-subtitle">
+  出演者と演目をご紹介！
+</p>
+
+
+<div class="grid">
+
+
+  <div class="card performer">
+
+    <div class="number">
+      01
+    </div>
+
+    <div class="performance-name">
+      演者名
+    </div>
+
+    <div class="performance-title">
+      演目：○○○○
+    </div>
+
+  </div>
+
+
+  <div class="card performer">
+
+    <div class="number">
+      02
+    </div>
+
+    <div class="performance-name">
+      演者名
+    </div>
+
+    <div class="performance-title">
+      演目：○○○○
+    </div>
+
+  </div>
+
+
+  <div class="card performer">
+
+    <div class="number">
+      03
+    </div>
+
+    <div class="performance-name">
+      演者名
+    </div>
+
+    <div class="performance-title">
+      演目：○○○○
+    </div>
+
+  </div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     OP・ED
+========================= -->
+
+<section id="movies">
+
+<h2>
+  🎬 OP・ED
+</h2>
+
+<p class="section-subtitle">
+  暁秀祭を彩るスペシャルムービー
+</p>
+
+
+<div class="grid">
+
+
+  <div class="movie-card">
+
+    <div class="movie-placeholder">
+      🎬 OP動画準備中
+    </div>
+
+    <h3>
+      暁秀祭2027 OP
+    </h3>
+
+    <p>
+      OP動画をここに掲載します。
+    </p>
+
+  </div>
+
+
+  <div class="movie-card">
+
+    <div class="movie-placeholder">
+      🎬 ED動画準備中
+    </div>
+
+    <h3>
+      暁秀祭2027 ED
+    </h3>
+
+    <p>
+      ED動画をここに掲載します。
+    </p>
+
+  </div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     ステージ
+========================= -->
+
+<section id="stage">
+
+<h2>
+  🎭 ステージ
+</h2>
+
+<p class="section-subtitle">
+  体育館などで行われるステージ企画
+</p>
+
+
+<div class="grid">
+
+
+  <div class="card stage-card">
+
+    <div class="card-icon">
+      🎵
+    </div>
+
+    <h3>
+      ステージ企画
+    </h3>
+
+    <p>
+      詳細は決まり次第お知らせします。
+    </p>
+
+  </div>
+
+
+  <div class="card stage-card">
+
+    <div class="card-icon">
+      ✨
+    </div>
+
+    <h3>
+      タイムテーブル
+    </h3>
+
+    <p>
+      公開までしばらくお待ちください。
+    </p>
+
+  </div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     アクセス
+========================= -->
+
+<section id="access">
+
+<h2>
+  📍 アクセス
+</h2>
+
+<p class="section-subtitle">
+  会場までのアクセス方法
+</p>
+
+
+<!-- Google Map -->
+
+<div class="map-container">
+
+  <iframe
+    src="https://www.google.com/maps?q=加藤学園暁秀高等学校&output=embed"
+    width="100%"
+    height="450"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+
+</div>
+
+
+<!-- 会場 -->
+
+<div class="access-box">
+
+  <h3>
+    🏫 会場
+  </h3>
+
+  <p>
+    加藤学園暁秀高等学校
+  </p>
+
+</div>
+
+
+<!-- 公共交通機関 -->
+
+<div class="access-box">
+
+  <h3>
+    🚃 公共交通機関
+  </h3>
+
+  <p>
+    公共交通機関をご利用ください。
+  </p>
+
+</div>
+
+
+<!-- バス -->
 
 <div class="bus-box">
 
-<div class="bus-title">※ 当日駐車場のご用意はありません</div>
-公共交通機関・下記バスをご利用ください。<br><br>
+  <div class="bus-title">
+    🚌 バス案内
+  </div>
 
-<div class="bus-line">
-<strong>所要時間：</strong> およそ20分<br>
-<strong>料金：</strong> ○○円
+
+  <p>
+
+    ※ 当日駐車場のご用意はありません。<br>
+
+    公共交通機関・下記バスをご利用ください。
+
+  </p>
+
+
+  <br>
+
+
+  <div class="bus-line">
+
+    <strong>
+      所要時間
+    </strong>
+
+    <br>
+
+    およそ20分
+
+    <br><br>
+
+    <strong>
+      料金
+    </strong>
+
+    <br>
+
+    ○○円
+
+  </div>
+
+
+  <div class="bus-line">
+
+    <strong>
+      ▶ 行き
+    </strong>
+
+    <br>
+
+    沼津駅 ○○口
+    →
+    加藤学園暁秀高校前
+
+
+    <div class="time">
+      0:00 / 0:00 / 00:00
+    </div>
+
+  </div>
+
+
+  <div class="bus-line">
+
+    <strong>
+      ◀ 帰り
+    </strong>
+
+    <br>
+
+    加藤学園暁秀高校前
+    →
+    沼津駅 ○○口
+
+
+    <div class="time">
+      00:00 / 00:00 / 00:00
+    </div>
+
+  </div>
+
+
+  <div class="note">
+
+    ※ バス時刻は変更になる場合があります。
+    最新情報をご確認ください。
+
+  </div>
+
 </div>
 
-<div class="bus-line">
-<strong>行き</strong><br>
-＜沼津駅＃口 → 加藤学園暁秀高校前＞
-<div class="time">0:00 / 0:00 / 00:00</div>
-</div>
-
-<div class="bus-line">
-<strong>帰り</strong><br>
-＜加藤学園暁秀高校前 → 沼津駅＃口＞
-<div class="time">00:00 / 00:00 / 00:00</div>
-</div>
-
-<div class="note">
-※ バス時刻は変更になる場合があります。最新情報をご確認ください。
-</div>
-
-</div>
 </section>
 
+
+
+<!-- =========================
+     お知らせ
+========================= -->
+
+<section id="notice">
+
+<h2>
+  📢 お知らせ
+</h2>
+
+<p class="section-subtitle">
+  暁秀祭からのお知らせ
+</p>
+
+
+<div class="notice">
+
+  <div class="notice-date">
+    2027.00.00
+  </div>
+
+  <p>
+    暁秀祭2027公式サイトを公開しました！
+  </p>
+
+</div>
+
+
+<div class="notice">
+
+  <div class="notice-date">
+    2027.00.00
+  </div>
+
+  <p>
+    企画情報を順次公開予定です。
+  </p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
-© 2027 暁秀祭 実行委員会
+
+  <p>
+    暁秀祭2027 公式サイト
+  </p>
+
+  <p style="margin-top:8px;font-size:.85rem;">
+    © 暁秀祭2027
+  </p>
+
 </footer>
 
+
+
+<!-- =========================
+     カウントダウン
+========================= -->
+
 <script>
+
 function countdown(){
 
-const target = new Date("2027-05-16T09:00:00").getTime();
-const now = new Date().getTime();
-const diff = target - now;
+  const target =
+    new Date(
+      "2027-05-16T00:00:00+09:00"
+    ).getTime();
 
-if(diff <= 0){
-document.querySelector(".countdown").innerHTML="開催中！";
-return;
+
+  const now =
+    new Date().getTime();
+
+
+  const diff =
+    target - now;
+
+
+  if(diff <= 0){
+
+    document.getElementById("day")
+      .textContent = "0";
+
+    document.getElementById("hour")
+      .textContent = "0";
+
+    document.getElementById("min")
+      .textContent = "0";
+
+    document.getElementById("sec")
+      .textContent = "0";
+
+    return;
+
+  }
+
+
+  document.getElementById("day")
+    .textContent =
+      Math.floor(
+        diff /
+        (1000 * 60 * 60 * 24)
+      );
+
+
+  document.getElementById("hour")
+    .textContent =
+      Math.floor(
+        (diff /
+        (1000 * 60 * 60)) % 24
+      );
+
+
+  document.getElementById("min")
+    .textContent =
+      Math.floor(
+        (diff /
+        (1000 * 60)) % 60
+      );
+
+
+  document.getElementById("sec")
+    .textContent =
+      Math.floor(
+        (diff / 1000) % 60
+      );
+
 }
 
-document.getElementById("day").textContent=Math.floor(diff/(1000*60*60*24));
-document.getElementById("hour").textContent=Math.floor((diff/(1000*60*60))%24);
-document.getElementById("min").textContent=Math.floor((diff/(1000*60))%60);
-document.getElementById("sec").textContent=Math.floor((diff/1000)%60);
 
-}
+setInterval(
+  countdown,
+  1000
+);
 
-setInterval(countdown,1000);
 countdown();
+
 </script>
+
 
 </body>
 </html>
