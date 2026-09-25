@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,35 +30,8 @@ body{
   overflow-x:hidden;
 }
 
-
-/* =========================
-   トップ
-========================= */
-
-.hero{
-  min-height:100vh;
-
-  background:
-    radial-gradient(circle at 10% 20%,
-      rgba(255,255,255,.25) 0 30px,
-      transparent 31px),
-
-    radial-gradient(circle at 90% 30%,
-      rgba(255,255,255,.18) 0 45px,
-      transparent 46px),
-
-    linear-gradient(
-      135deg,
-      #0066a8,
-      #008dcc 50%,
-      #35b8d8
-    );
-
-  color:#fff;
-  position:relative;
-
-  display:flex;
-  flex-direction:column;
+a{
+  color:inherit;
 }
 
 
@@ -66,6 +40,9 @@ body{
 ========================= */
 
 header{
+  position:absolute;
+  top:0;
+  left:0;
   width:100%;
   padding:18px 6%;
 
@@ -73,32 +50,33 @@ header{
   justify-content:space-between;
   align-items:center;
 
-  position:absolute;
-  top:0;
-  left:0;
-
   z-index:10;
 }
 
 .logo{
+  color:#fff;
   font-size:1.4rem;
   font-weight:900;
   letter-spacing:.08em;
 }
 
+
+/* =========================
+   トップナビ
+========================= */
+
 header nav{
   display:flex;
   gap:10px;
+  flex-wrap:wrap;
 }
 
 header nav a{
   color:#fff;
   text-decoration:none;
-
   font-weight:700;
 
   padding:9px 15px;
-
   border-radius:999px;
 
   transition:.25s;
@@ -111,13 +89,42 @@ header nav a:hover{
 
 
 /* =========================
-   トップ中央
+   HERO
 ========================= */
+
+.hero{
+  min-height:100vh;
+
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(255,255,255,.25) 0 30px,
+      transparent 31px
+    ),
+
+    radial-gradient(
+      circle at 90% 30%,
+      rgba(255,255,255,.18) 0 45px,
+      transparent 46px
+    ),
+
+    linear-gradient(
+      135deg,
+      #0066a8,
+      #008dcc 50%,
+      #35b8d8
+    );
+
+  color:#fff;
+
+  display:flex;
+  flex-direction:column;
+  position:relative;
+}
 
 .center{
   margin:auto;
   text-align:center;
-
   padding:100px 20px 50px;
 }
 
@@ -125,14 +132,12 @@ header nav a:hover{
   font-size:1rem;
   letter-spacing:.25em;
   font-weight:700;
-
   margin-bottom:15px;
 }
 
 .center h1{
   font-size:clamp(3rem,9vw,7rem);
   line-height:1;
-
   font-weight:900;
 
   text-shadow:
@@ -141,16 +146,13 @@ header nav a:hover{
 
 .center h1 span{
   display:block;
-
   font-size:.32em;
   letter-spacing:.25em;
-
   margin-top:18px;
 }
 
 .date{
   margin-top:30px;
-
   font-size:1.1rem;
   font-weight:700;
 }
@@ -165,22 +167,17 @@ header nav a:hover{
 
   display:flex;
   justify-content:center;
-
   gap:12px;
-
   flex-wrap:wrap;
 }
 
 .box{
   min-width:80px;
-
   padding:15px 10px;
 
   background:rgba(255,255,255,.18);
 
-  border:
-    1px solid
-    rgba(255,255,255,.35);
+  border:1px solid rgba(255,255,255,.35);
 
   border-radius:20px;
 
@@ -207,9 +204,7 @@ header nav a:hover{
 
   display:flex;
   justify-content:center;
-
   gap:12px;
-
   flex-wrap:wrap;
 }
 
@@ -247,7 +242,7 @@ header nav a:hover{
 .main-tabs{
   width:100%;
 
-  padding:22px 20px;
+  padding:20px;
 
   background:#fff;
 
@@ -262,15 +257,12 @@ header nav a:hover{
 
 .main-tabs-inner{
   max-width:1100px;
-
   margin:auto;
 
   display:flex;
-
   justify-content:center;
 
   gap:10px;
-
   flex-wrap:wrap;
 }
 
@@ -278,10 +270,9 @@ header nav a:hover{
   text-decoration:none;
 
   color:#0066a8;
-
   background:#eef9ff;
 
-  padding:11px 18px;
+  padding:12px 20px;
 
   border-radius:999px;
 
@@ -295,106 +286,68 @@ header nav a:hover{
 .main-tabs a:hover{
   background:#0066a8;
   color:#fff;
-
   transform:translateY(-3px);
 }
 
 
 /* =========================
-   セクション
+   共通セクション
 ========================= */
 
 section{
   max-width:1100px;
-
   margin:auto;
-
   padding:80px 20px;
 }
 
 section h2{
   text-align:center;
-
   color:#0066a8;
-
   font-size:2.2rem;
-
   margin-bottom:12px;
 }
 
 .section-subtitle{
   text-align:center;
-
   color:#777;
-
   margin-bottom:35px;
 }
 
 
 /* =========================
-   共通カード
+   昨年度写真
 ========================= */
 
-.grid{
+.photo-grid{
   display:grid;
 
   grid-template-columns:
     repeat(
       auto-fit,
-      minmax(220px,1fr)
+      minmax(250px,1fr)
     );
 
-  gap:22px;
+  gap:20px;
 }
 
-.card{
+.photo-card{
   background:#fff;
-
   border-radius:25px;
 
-  padding:28px;
+  overflow:hidden;
 
   box-shadow:
     0 10px 30px rgba(0,0,0,.08);
 
-  border:
-    3px solid
-    #eef8ff;
-
   transition:.25s;
 }
 
-.card:hover{
-  transform:translateY(-6px);
-
-  box-shadow:
-    0 15px 35px rgba(0,0,0,.12);
+.photo-card:hover{
+  transform:translateY(-5px);
 }
 
-.card h3{
-  color:#0066a8;
-
-  margin-bottom:10px;
-}
-
-.card p{
-  color:#555;
-
-  line-height:1.7;
-}
-
-
-/* =========================
-   クラス企画
-========================= */
-
-.class-card{
-  overflow:hidden;
-  padding:0;
-}
-
-.class-photo{
-  height:180px;
+.photo-placeholder{
+  height:220px;
 
   background:
     linear-gradient(
@@ -404,131 +357,76 @@ section h2{
     );
 
   display:flex;
-
-  justify-content:center;
   align-items:center;
+  justify-content:center;
 
   color:#5c9bb5;
-
   font-weight:700;
 }
 
-.class-info{
-  padding:23px;
-}
-
-.class-info h3{
-  margin-bottom:10px;
-}
-
-.details{
-  margin-top:15px;
-
-  display:flex;
-
-  gap:8px;
-
-  flex-wrap:wrap;
-}
-
-.detail{
-  background:#eef9ff;
-
-  color:#0066a8;
-
-  padding:7px 11px;
-
-  border-radius:999px;
-
-  font-size:.9rem;
-
+.photo-card p{
+  padding:18px;
+  text-align:center;
   font-weight:700;
 }
 
 
 /* =========================
-   暁秀王・GGT
+   スローガン
 ========================= */
 
-.performer{
-  position:relative;
-}
-
-.performer .number{
-  position:absolute;
-
-  right:20px;
-  top:20px;
-
-  font-size:.85rem;
-
-  color:#aaa;
-}
-
-.performance-name{
-  font-size:1.1rem;
-
-  font-weight:800;
-
-  color:#0066a8;
-
-  margin-bottom:8px;
-}
-
-.performance-title{
-  font-size:1.25rem;
-
-  font-weight:900;
-}
-
-
-/* =========================
-   OP・ED
-========================= */
-
-.movie-card{
+.slogan-box{
   background:#fff;
 
-  border-radius:25px;
+  padding:50px 25px;
 
-  padding:25px;
+  border-radius:30px;
+
+  text-align:center;
 
   box-shadow:
     0 10px 30px rgba(0,0,0,.08);
 }
 
-.movie-placeholder{
-  width:100%;
-
-  aspect-ratio:16/9;
-
-  background:#eaf8ff;
-
-  border-radius:18px;
-
-  display:flex;
-
-  align-items:center;
-  justify-content:center;
-
-  color:#5792aa;
-
-  font-weight:700;
+.slogan-label{
+  color:#008dcc;
+  font-weight:800;
+  margin-bottom:15px;
 }
 
-.movie-card h3{
-  margin-top:18px;
-
+.slogan{
+  font-size:clamp(1.8rem,5vw,3rem);
+  font-weight:900;
   color:#0066a8;
+}
+
+.slogan-text{
+  margin-top:15px;
+  color:#777;
 }
 
 
 /* =========================
-   ステージ
+   お知らせ
 ========================= */
 
-.stage-card{
-  text-align:center;
+.notice{
+  background:#fff;
+
+  padding:22px;
+
+  border-radius:20px;
+
+  margin-bottom:12px;
+
+  box-shadow:
+    0 7px 20px rgba(0,0,0,.06);
+}
+
+.notice-date{
+  color:#008dcc;
+  font-weight:800;
+  margin-bottom:5px;
 }
 
 
@@ -553,7 +451,6 @@ section h2{
   display:block;
 
   width:100%;
-
   height:450px;
 
   border:0;
@@ -574,86 +471,39 @@ section h2{
 
 .access-box h3{
   color:#0066a8;
-
   margin-bottom:12px;
 }
 
 
 /* =========================
-   バス
+   次のページへの案内
 ========================= */
 
-.bus-box{
-  margin-top:25px;
-
-  background:#fff;
-
-  padding:30px;
-
-  border-radius:25px;
-
-  box-shadow:
-    0 10px 30px rgba(0,0,0,.08);
+.next-page{
+  margin-top:35px;
+  text-align:center;
 }
 
-.bus-title{
-  font-size:1.2rem;
+.next-page a{
+  display:inline-block;
 
-  font-weight:900;
+  padding:14px 28px;
 
-  color:#0066a8;
+  background:#0066a8;
+  color:#fff;
 
-  margin-bottom:20px;
-}
+  text-decoration:none;
 
-.bus-line{
-  margin-bottom:25px;
-
-  padding:20px;
-
-  background:#f4fbff;
-
-  border-radius:18px;
-}
-
-.time{
-  margin-top:10px;
-
-  font-size:1.05rem;
-
-  font-weight:800;
-}
-
-.note{
-  color:#777;
-
-  font-size:.9rem;
-}
-
-
-/* =========================
-   お知らせ
-========================= */
-
-.notice{
-  background:#fff;
-
-  padding:22px;
-
-  border-radius:20px;
-
-  margin-bottom:12px;
-
-  box-shadow:
-    0 7px 20px rgba(0,0,0,.06);
-}
-
-.notice-date{
-  color:#008dcc;
+  border-radius:999px;
 
   font-weight:800;
 
-  margin-bottom:5px;
+  transition:.25s;
+}
+
+.next-page a:hover{
+  transform:translateY(-3px);
+  background:#008dcc;
 }
 
 
@@ -663,7 +513,6 @@ section h2{
 
 footer{
   background:#00527f;
-
   color:#fff;
 
   text-align:center;
@@ -682,7 +531,6 @@ footer{
 
   header{
     position:absolute;
-
     padding:15px;
   }
 
@@ -700,7 +548,6 @@ footer{
 
   .box{
     min-width:65px;
-
     padding:10px 7px;
   }
 
@@ -716,7 +563,6 @@ footer{
     justify-content:flex-start;
 
     overflow-x:auto;
-
     flex-wrap:nowrap;
 
     padding-bottom:5px;
@@ -724,7 +570,6 @@ footer{
 
   .main-tabs a{
     white-space:nowrap;
-
     font-size:.85rem;
   }
 
@@ -743,6 +588,7 @@ footer{
 }
 
 </style>
+
 </head>
 
 
@@ -763,15 +609,25 @@ footer{
 
   <nav>
 
-    <a href="#event">企画</a>
+    <a href="index.html">
+      ホーム
+    </a>
 
-    <a href="#king">暁秀王</a>
+    <a href="projects.html">
+      企画一覧
+    </a>
 
-    <a href="#ggt">GGT</a>
+    <a href="movies.html">
+      OP・ED映像
+    </a>
 
-    <a href="#movies">OP・ED</a>
+    <a href="kitchen-car.html">
+      キッチンカー
+    </a>
 
-    <a href="#access">アクセス</a>
+    <a href="timetable.html">
+      タイムテーブル・校内マップ
+    </a>
 
   </nav>
 
@@ -821,7 +677,7 @@ footer{
 
   <div class="top-buttons">
 
-    <a href="#event">
+    <a href="projects.html">
       企画を見る
     </a>
 
@@ -845,32 +701,24 @@ footer{
 
   <div class="main-tabs-inner">
 
-    <a href="#event">
-      クラス企画
+    <a href="index.html">
+      ホーム
     </a>
 
-    <a href="#king">
-      暁秀王
+    <a href="projects.html">
+      企画一覧
     </a>
 
-    <a href="#ggt">
-      GGT
+    <a href="movies.html">
+      OP・ED映像
     </a>
 
-    <a href="#movies">
-      OP・ED
+    <a href="kitchen-car.html">
+      キッチンカー
     </a>
 
-    <a href="#stage">
-      ステージ
-    </a>
-
-    <a href="#access">
-      アクセス
-    </a>
-
-    <a href="#notice">
-      お知らせ
+    <a href="timetable.html">
+      タイムテーブル・校内マップ
     </a>
 
   </div>
@@ -880,540 +728,149 @@ footer{
 
 
 <!-- =========================
-     クラス企画
+     昨年度の写真
 ========================= -->
 
-<section id="event">
+<section id="photos">
 
-<h2>
-  クラス企画
-</h2>
+  <h2>
+    昨年度の写真
+  </h2>
 
-<p class="section-subtitle">
-  各クラスの企画をチェック！
-</p>
-
-
-<div class="grid">
+  <p class="section-subtitle">
+    昨年度の暁秀祭の様子
+  </p>
 
 
-  <div class="card class-card">
+  <div class="photo-grid">
 
-    <div class="class-photo">
-      写真準備中
-    </div>
 
-    <div class="class-info">
+    <div class="photo-card">
 
-      <h3>
-        ○年○組
-      </h3>
+      <div class="photo-placeholder">
+        写真準備中
+      </div>
 
       <p>
-        企画内容をここに掲載します。
+        昨年度の暁秀祭
       </p>
 
-      <div class="details">
+    </div>
 
-        <div class="detail">
-          約20分
-        </div>
 
-        <div class="detail">
-          200円
-        </div>
+    <div class="photo-card">
 
+      <div class="photo-placeholder">
+        写真準備中
+      </div>
+
+      <p>
+        昨年度の企画
+      </p>
+
+    </div>
+
+
+    <div class="photo-card">
+
+      <div class="photo-placeholder">
+        写真準備中
+      </div>
+
+      <p>
+        昨年度のステージ
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     カウントダウン
+========================= -->
+
+<section id="countdown-section">
+
+  <h2>
+    暁秀祭まで
+  </h2>
+
+  <p class="section-subtitle">
+    2027年5月16日（日）開催
+  </p>
+
+
+  <div class="slogan-box">
+
+    <div class="slogan-label">
+      COUNTDOWN
+    </div>
+
+    <div class="countdown">
+
+      <div class="box">
+        <div class="num" id="day2">--</div>
+        <div class="label">日</div>
+      </div>
+
+      <div class="box">
+        <div class="num" id="hour2">--</div>
+        <div class="label">時間</div>
+      </div>
+
+      <div class="box">
+        <div class="num" id="min2">--</div>
+        <div class="label">分</div>
+      </div>
+
+      <div class="box">
+        <div class="num" id="sec2">--</div>
+        <div class="label">秒</div>
       </div>
 
     </div>
 
   </div>
 
-
-  <div class="card class-card">
-
-    <div class="class-photo">
-      写真準備中
-    </div>
-
-    <div class="class-info">
-
-      <h3>
-        ○年○組
-      </h3>
-
-      <p>
-        企画内容をここに掲載します。
-      </p>
-
-      <div class="details">
-
-        <div class="detail">
-          約15分
-        </div>
-
-        <div class="detail">
-          無料
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <div class="card class-card">
-
-    <div class="class-photo">
-      写真準備中
-    </div>
-
-    <div class="class-info">
-
-      <h3>
-        ○年○組
-      </h3>
-
-      <p>
-        企画内容をここに掲載します。
-      </p>
-
-      <div class="details">
-
-        <div class="detail">
-          約30分
-        </div>
-
-        <div class="detail">
-          100円
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-
-</div>
-
 </section>
 
 
 
 <!-- =========================
-     暁秀王
+     スローガン
 ========================= -->
 
-<section id="king">
+<section id="slogan-section">
 
-<h2>
-  暁秀王
-</h2>
+  <h2>
+    スローガン
+  </h2>
 
-<p class="section-subtitle">
-  出演者と演目をご紹介！
-</p>
-
-
-<div class="grid">
-
-
-  <div class="card performer">
-
-    <div class="number">
-      01
-    </div>
-
-    <div class="performance-name">
-      演者名
-    </div>
-
-    <div class="performance-title">
-      演目：○○○○
-    </div>
-
-  </div>
-
-
-  <div class="card performer">
-
-    <div class="number">
-      02
-    </div>
-
-    <div class="performance-name">
-      演者名
-    </div>
-
-    <div class="performance-title">
-      演目：○○○○
-    </div>
-
-  </div>
-
-
-  <div class="card performer">
-
-    <div class="number">
-      03
-    </div>
-
-    <div class="performance-name">
-      演者名
-    </div>
-
-    <div class="performance-title">
-      演目：○○○○
-    </div>
-
-  </div>
-
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     GGT
-========================= -->
-
-<section id="ggt">
-
-<h2>
-  GGT
-</h2>
-
-<p class="section-subtitle">
-  出演者と演目をご紹介！
-</p>
-
-
-<div class="grid">
-
-
-  <div class="card performer">
-
-    <div class="number">
-      01
-    </div>
-
-    <div class="performance-name">
-      演者名
-    </div>
-
-    <div class="performance-title">
-      演目：○○○○
-    </div>
-
-  </div>
-
-
-  <div class="card performer">
-
-    <div class="number">
-      02
-    </div>
-
-    <div class="performance-name">
-      演者名
-    </div>
-
-    <div class="performance-title">
-      演目：○○○○
-    </div>
-
-  </div>
-
-
-  <div class="card performer">
-
-    <div class="number">
-      03
-    </div>
-
-    <div class="performance-name">
-      演者名
-    </div>
-
-    <div class="performance-title">
-      演目：○○○○
-    </div>
-
-  </div>
-
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     OP・ED
-========================= -->
-
-<section id="movies">
-
-<h2>
-  OP・ED
-</h2>
-
-<p class="section-subtitle">
-  暁秀祭を彩るスペシャルムービー
-</p>
-
-
-<div class="grid">
-
-
-  <div class="movie-card">
-
-    <div class="movie-placeholder">
-      OP動画準備中
-    </div>
-
-    <h3>
-      暁秀祭2027 OP
-    </h3>
-
-    <p>
-      OP動画をここに掲載します。
-    </p>
-
-  </div>
-
-
-  <div class="movie-card">
-
-    <div class="movie-placeholder">
-      ED動画準備中
-    </div>
-
-    <h3>
-      暁秀祭2027 ED
-    </h3>
-
-    <p>
-      ED動画をここに掲載します。
-    </p>
-
-  </div>
-
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     ステージ
-========================= -->
-
-<section id="stage">
-
-<h2>
-  ステージ
-</h2>
-
-<p class="section-subtitle">
-  体育館などで行われるステージ企画
-</p>
-
-
-<div class="grid">
-
-
-  <div class="card stage-card">
-
-    <h3>
-      ステージ企画
-    </h3>
-
-    <p>
-      詳細は決まり次第お知らせします。
-    </p>
-
-  </div>
-
-
-  <div class="card stage-card">
-
-    <h3>
-      タイムテーブル
-    </h3>
-
-    <p>
-      公開までしばらくお待ちください。
-    </p>
-
-  </div>
-
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     アクセス
-========================= -->
-
-<section id="access">
-
-<h2>
-  アクセス
-</h2>
-
-<p class="section-subtitle">
-  会場までのアクセス方法
-</p>
-
-
-<!-- Google Map -->
-
-<div class="map-container">
-
-  <iframe
-    src="https://www.google.com/maps?q=加藤学園暁秀中学校高等学校&output=embed"
-    width="100%"
-    height="450"
-    style="border:0;"
-    allowfullscreen=""
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
-
-</div>
-
-
-<!-- 会場 -->
-
-<div class="access-box">
-
-  <h3>
-    会場
-  </h3>
-
-  <p>
-    加藤学園暁秀高等学校
-  </p>
-
-</div>
-
-
-<!-- 公共交通機関 -->
-
-<div class="access-box">
-
-  <h3>
-    公共交通機関
-  </h3>
-
-  <p>
-    公共交通機関をご利用ください。
-  </p>
-
-</div>
-
-
-<!-- バス -->
-
-<div class="bus-box">
-
-  <div class="bus-title">
-    バス案内
-  </div>
-
-
-  <p>
-
-    ※ 当日駐車場のご用意はありません。<br>
-
-    公共交通機関・下記バスをご利用ください。
-
+  <p class="section-subtitle">
+    暁秀祭2027を彩るテーマ
   </p>
 
 
-  <br>
+  <div class="slogan-box">
 
-
-  <div class="bus-line">
-
-    <strong>
-      所要時間
-    </strong>
-
-    <br>
-
-    およそ20分
-
-    <br><br>
-
-    <strong>
-      料金
-    </strong>
-
-    <br>
-
-    ○○円
-
-  </div>
-
-
-  <div class="bus-line">
-
-    <strong>
-      行き
-    </strong>
-
-    <br>
-
-    沼津駅 ○○口
-    →
-    加藤学園暁秀高校前
-
-
-    <div class="time">
-      0:00 / 0:00 / 00:00
+    <div class="slogan-label">
+      SLOGAN
     </div>
 
-  </div>
-
-
-  <div class="bus-line">
-
-    <strong>
-      帰り
-    </strong>
-
-    <br>
-
-    加藤学園暁秀高校前
-    →
-    沼津駅 ○○口
-
-
-    <div class="time">
-      00:00 / 00:00 / 00:00
+    <div class="slogan">
+      スローガン準備中
     </div>
 
-  </div>
-
-
-  <div class="note">
-
-    ※ バス時刻は変更になる場合があります。
-    最新情報をご確認ください。
+    <p class="slogan-text">
+      スローガンが決まり次第、こちらに掲載します。
+    </p>
 
   </div>
-
-</div>
 
 </section>
 
@@ -1425,39 +882,290 @@ footer{
 
 <section id="notice">
 
-<h2>
-  お知らせ
-</h2>
+  <h2>
+    お知らせ
+  </h2>
 
-<p class="section-subtitle">
-  暁秀祭からのお知らせ
-</p>
-
-
-<div class="notice">
-
-  <div class="notice-date">
-    2027.00.00
-  </div>
-
-  <p>
-    暁秀祭2027公式サイトを公開しました！
+  <p class="section-subtitle">
+    暁秀祭からのお知らせ
   </p>
 
-</div>
 
+  <div class="notice">
 
-<div class="notice">
+    <div class="notice-date">
+      2027.00.00
+    </div>
 
-  <div class="notice-date">
-    2027.00.00
+    <p>
+      暁秀祭2027公式サイトを公開しました。
+    </p>
+
   </div>
 
-  <p>
-    企画情報を順次公開予定です。
+
+  <div class="notice">
+
+    <div class="notice-date">
+      2027.00.00
+    </div>
+
+    <p>
+      企画情報を順次公開予定です。
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     企画一覧への案内
+========================= -->
+
+<section>
+
+  <h2>
+    企画一覧
+  </h2>
+
+  <p class="section-subtitle">
+    中学合唱、高校生徒企画、部活動、ステージ企画などをご紹介します。
   </p>
 
-</div>
+
+  <div class="slogan-box">
+
+    <p>
+      各企画の詳細ページはこちらから確認できます。
+    </p>
+
+    <div class="next-page">
+
+      <a href="projects.html">
+        企画一覧を見る
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     OP・ED
+========================= -->
+
+<section>
+
+  <h2>
+    OP・ED映像
+  </h2>
+
+  <p class="section-subtitle">
+    暁秀祭を彩るスペシャルムービー
+  </p>
+
+
+  <div class="slogan-box">
+
+    <p>
+      OP・ED映像は公開準備中です。
+    </p>
+
+    <div class="next-page">
+
+      <a href="movies.html">
+        OP・ED映像を見る
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     キッチンカー
+========================= -->
+
+<section>
+
+  <h2>
+    キッチンカー
+  </h2>
+
+  <p class="section-subtitle">
+    出店するキッチンカーの情報
+  </p>
+
+
+  <div class="slogan-box">
+
+    <p>
+      店舗情報や販売メニュー、価格を順次掲載します。
+    </p>
+
+    <div class="next-page">
+
+      <a href="kitchen-car.html">
+        キッチンカーを見る
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     タイムテーブル・校内マップ
+========================= -->
+
+<section>
+
+  <h2>
+    タイムテーブル・校内マップ
+  </h2>
+
+  <p class="section-subtitle">
+    当日の予定や校内の場所を確認できます。
+  </p>
+
+
+  <div class="slogan-box">
+
+    <p>
+      タイムテーブルと校内マップは準備中です。
+    </p>
+
+    <div class="next-page">
+
+      <a href="timetable.html">
+        詳細を見る
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     アクセス
+========================= -->
+
+<section id="access">
+
+  <h2>
+    アクセス
+  </h2>
+
+  <p class="section-subtitle">
+    会場までのアクセス方法
+  </p>
+
+
+  <!-- Google Map -->
+
+  <div class="map-container">
+
+    <iframe
+      src="https://www.google.com/maps?q=加藤学園暁秀中学校高等学校&output=embed"
+      width="100%"
+      height="450"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
+  </div>
+
+
+  <div class="access-box">
+
+    <h3>
+      会場
+    </h3>
+
+    <p>
+      加藤学園暁秀高等学校
+    </p>
+
+  </div>
+
+
+  <div class="access-box">
+
+    <h3>
+      公共交通機関
+    </h3>
+
+    <p>
+      公共交通機関をご利用ください。
+    </p>
+
+  </div>
+
+
+  <div class="access-box">
+
+    <h3>
+      バス案内
+    </h3>
+
+    <p>
+      当日のバス情報は決まり次第掲載します。
+    </p>
+
+    <br>
+
+    <p>
+      所要時間：およそ20分
+    </p>
+
+    <p>
+      料金：○○円
+    </p>
+
+    <br>
+
+    <p>
+      行き：沼津駅 ○○口 → 加藤学園暁秀高校前
+    </p>
+
+    <p>
+      時刻：00:00 / 00:00 / 00:00
+    </p>
+
+    <br>
+
+    <p>
+      帰り：加藤学園暁秀高校前 → 沼津駅 ○○口
+    </p>
+
+    <p>
+      時刻：00:00 / 00:00 / 00:00
+    </p>
+
+    <br>
+
+    <p style="color:#777;">
+      ※ バス時刻は変更になる場合があります。
+      最新情報をご確認ください。
+    </p>
+
+  </div>
 
 </section>
 
@@ -1487,7 +1195,7 @@ footer{
 
 <script>
 
-function countdown(){
+function updateCountdown(){
 
   const target =
     new Date(
@@ -1503,67 +1211,78 @@ function countdown(){
     target - now;
 
 
-  if(diff <= 0){
-
-    document.getElementById("day")
-      .textContent = "0";
-
-    document.getElementById("hour")
-      .textContent = "0";
-
-    document.getElementById("min")
-      .textContent = "0";
-
-    document.getElementById("sec")
-      .textContent = "0";
-
-    return;
-
-  }
+  let days = 0;
+  let hours = 0;
+  let minutes = 0;
+  let seconds = 0;
 
 
-  document.getElementById("day")
-    .textContent =
+  if(diff > 0){
+
+    days =
       Math.floor(
         diff /
         (1000 * 60 * 60 * 24)
       );
 
-
-  document.getElementById("hour")
-    .textContent =
+    hours =
       Math.floor(
         (diff /
         (1000 * 60 * 60)) % 24
       );
 
-
-  document.getElementById("min")
-    .textContent =
+    minutes =
       Math.floor(
         (diff /
         (1000 * 60)) % 60
       );
 
-
-  document.getElementById("sec")
-    .textContent =
+    seconds =
       Math.floor(
         (diff / 1000) % 60
       );
+
+  }
+
+
+  document.getElementById("day").textContent =
+    days;
+
+  document.getElementById("hour").textContent =
+    hours;
+
+  document.getElementById("min").textContent =
+    minutes;
+
+  document.getElementById("sec").textContent =
+    seconds;
+
+
+  document.getElementById("day2").textContent =
+    days;
+
+  document.getElementById("hour2").textContent =
+    hours;
+
+  document.getElementById("min2").textContent =
+    minutes;
+
+  document.getElementById("sec2").textContent =
+    seconds;
 
 }
 
 
 setInterval(
-  countdown,
+  updateCountdown,
   1000
 );
 
-countdown();
+updateCountdown();
 
 </script>
 
 
 </body>
+
 </html>
