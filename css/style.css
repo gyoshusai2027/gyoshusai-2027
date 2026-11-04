@@ -179,3 +179,28 @@ footer {
   }
 }
 
+/* キッチンカーページ */
+
+.food-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, #ffe7bd, #ffd9d9);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #777;
+  font-weight: 900;
+  margin-bottom: 15px;
+}
+
+.photo-list > div,
+.photo-list > a {
+  transition: transform 0.2s ease;
+}
+
+.photo-list > div:hover,
+.photo-list > a:hover {
+  transform: translateY(-4px);
+}
+
