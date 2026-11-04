@@ -253,3 +253,51 @@ footer {
   }
 }
 
+/* =========================
+   校内マップ
+========================= */
+
+.map-placeholder {
+  width: 100%;
+  min-height: 300px;
+  margin: 30px auto;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff8f0;
+  border: 2px dashed #f2b77e;
+  border-radius: 20px;
+  color: #a66b3f;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.map-placeholder p {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* 校内マップ画像を追加するとき用 */
+.school-map-image {
+  display: block;
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  margin: 30px auto;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* スマートフォン対応 */
+@media (max-width: 600px) {
+  .map-placeholder {
+    min-height: 200px;
+    padding: 20px;
+  }
+
+  .map-placeholder p {
+    font-size: 1rem;
+  }
+}
+
