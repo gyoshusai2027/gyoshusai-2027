@@ -1,186 +1,162 @@
+
 <!DOCTYPE html>
-<div class="outbox">
-<div class="inbox">
-<h1 class="title"></h1>
-<div class="slide-item"></div>
-<div class="slide-item"></div>
-<div class="slide-item"></div>
-</div>
-</div>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>企画一覧｜暁秀祭2027</title>
-
-  <style>
-    body {
-      margin: 0;
-      font-family: "Yu Gothic", "Hiragino Sans", sans-serif;
-      background: #f7f9ff;
-      color: #333;
-    }
-
-    header {
-      background: linear-gradient(135deg, #4f8cff, #7b5cff);
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 36px;
-    }
-
-    header p {
-      margin-top: 10px;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    .category {
-      margin-bottom: 50px;
-    }
-
-    .category h2 {
-      border-left: 6px solid #5b7cff;
-      padding-left: 12px;
-      font-size: 28px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 18px;
-      padding: 25px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-      text-align: center;
-    }
-
-    .thumbnail {
-      height: 160px;
-      background: #e8edff;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 15px;
-      color: #667;
-    }
-
-    .card h3 {
-      margin: 10px 0;
-      font-size: 22px;
-    }
-
-    .card p {
-      line-height: 1.7;
-    }
-
-    .back {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 12px 25px;
-      background: #5b7cff;
-      color: white;
-      text-decoration: none;
-      border-radius: 30px;
-    }
-  </style>
+  <link rel="stylesheet" href="CSS/style.css">
 </head>
 
 <body>
 
 <header>
-  <h1>企画一覧</h1>
-  <p>暁秀祭2027</p>
+  <a href="index.html">暁秀祭2027</a>
+
+  <nav>
+    <a href="index.html">ホーム</a>
+    <a href="projects.html">企画一覧</a>
+    <a href="stage.html">OP・ED映像</a>
+    <a href="food.html">キッチンカー</a>
+    <a href="timetable.html">タイムテーブル</a>
+    <a href="map.html">校内マップ</a>
+  </nav>
 </header>
 
-<main class="container">
+<main>
 
-  <section class="category">
+  <section class="hero">
+    <p>GYOSHU SAI 2027</p>
+    <h1>企画一覧</h1>
+    <p>みんなでつくる、最高の文化祭。</p>
+  </section>
+
+  <section>
+    <p class="section-label">STUDENT PROJECT</p>
     <h2>生徒企画</h2>
+    <p>生徒たちによる個性豊かな企画を紹介します。</p>
 
-    <div class="cards">
+    <div class="photo-list">
 
-      <div class="card">
-        <div class="thumbnail">
-          中学合唱サムネイル
-        </div>
+      <a href="#middle-school">
         <h3>中学合唱</h3>
-        <p>
-          各クラスの合唱企画を紹介します。
-        </p>
-      </div>
+        <p>各クラスの合唱を紹介！</p>
+      </a>
 
-      <div class="card">
-        <div class="thumbnail">
-          高校生徒企画サムネイル
-        </div>
+      <a href="#high-school">
         <h3>高校生徒企画</h3>
-        <p>
-          高校生による企画を紹介します。
-        </p>
-      </div>
+        <p>高校生による楽しい企画！</p>
+      </a>
 
-      <div class="card">
-        <div class="thumbnail">
-          部活動サムネイル
-        </div>
+      <a href="#club">
         <h3>部活動</h3>
-        <p>
-          各部活動の企画を紹介します。
-        </p>
-      </div>
+        <p>日頃の活動の成果を発表！</p>
+      </a>
 
     </div>
   </section>
 
+  <section id="middle-school">
+    <p class="section-label">MIDDLE SCHOOL</p>
+    <h2>中学合唱</h2>
+    <p>各クラスの合唱曲と意気込みを紹介します。</p>
 
-  <section class="category">
+    <div class="photo-list">
+      <div>
+        <h3>中学1年</h3>
+        <p>写真・紹介動画</p>
+        <p>歌う曲：後日公開</p>
+        <p>意気込み：後日公開</p>
+      </div>
+
+      <div>
+        <h3>中学2年</h3>
+        <p>写真・紹介動画</p>
+        <p>歌う曲：後日公開</p>
+        <p>意気込み：後日公開</p>
+      </div>
+
+      <div>
+        <h3>中学3年</h3>
+        <p>写真・紹介動画</p>
+        <p>歌う曲：後日公開</p>
+        <p>意気込み：後日公開</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="high-school">
+    <p class="section-label">HIGH SCHOOL</p>
+    <h2>高校生徒企画</h2>
+    <p>各クラスの企画を紹介します。</p>
+
+    <div class="photo-list">
+      <div>
+        <h3>高校1年</h3>
+        <p>企画名：後日公開</p>
+        <p>企画内容：後日公開</p>
+        <p>価格：未定</p>
+        <p>所要時間：未定</p>
+        <p>使用教室：未定</p>
+      </div>
+
+      <div>
+        <h3>高校2年</h3>
+        <p>企画名：後日公開</p>
+        <p>企画内容：後日公開</p>
+        <p>価格：未定</p>
+        <p>所要時間：未定</p>
+        <p>使用教室：未定</p>
+      </div>
+
+      <div>
+        <h3>高校3年</h3>
+        <p>企画名：後日公開</p>
+        <p>企画内容：後日公開</p>
+        <p>価格：未定</p>
+        <p>所要時間：未定</p>
+        <p>使用教室：未定</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="club">
+    <p class="section-label">CLUB ACTIVITIES</p>
+    <h2>部活動</h2>
+    <p>各部活動の発表・展示を紹介します。</p>
+
+    <div class="photo-list">
+      <div>
+        <h3>部活動紹介</h3>
+        <p>内容は後日公開します。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="section-label">STAGE PROJECT</p>
     <h2>ステージ企画</h2>
+    <p>ステージを盛り上げる特別企画！</p>
 
-    <div class="cards">
-
-      <div class="card">
-        <div class="thumbnail">
-          暁秀王サムネイル
-        </div>
+    <div class="photo-list">
+      <div>
         <h3>暁秀王</h3>
-        <p>
-          出演者やパフォーマンスを紹介します。
-        </p>
+        <p>詳細は後日公開します。</p>
       </div>
 
-      <div class="card">
-        <div class="thumbnail">
-          GGTサムネイル
-        </div>
+      <div>
         <h3>GGT</h3>
-        <p>
-          出演グループを紹介します。
-        </p>
+        <p>詳細は後日公開します。</p>
       </div>
-
     </div>
   </section>
-
-  <a href="index.html" class="back">
-    ホームへ戻る
-  </a>
 
 </main>
+
+<footer>
+  <p>暁秀祭2027 公式サイト</p>
+  <p>© 暁秀祭2027</p>
+</footer>
 
 </body>
 </html>
