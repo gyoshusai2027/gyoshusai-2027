@@ -204,3 +204,52 @@ footer {
   transform: translateY(-4px);
 }
 
+/* タイムテーブル */
+
+.schedule-list {
+  max-width: 850px;
+  margin: 30px auto;
+}
+
+.schedule-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: white;
+  padding: 22px;
+  margin-bottom: 15px;
+  border-radius: 18px;
+  box-shadow: 0 4px 15px #00000010;
+}
+
+.schedule-time {
+  min-width: 90px;
+  padding: 15px;
+  text-align: center;
+  background: #ffe4d9;
+  color: #e77d61;
+  border-radius: 12px;
+  font-weight: 900;
+}
+
+.schedule-content h3 {
+  margin: 0 0 8px;
+}
+
+.schedule-content p {
+  margin: 0;
+  color: #777;
+}
+
+@media (max-width: 600px) {
+  .schedule-item {
+    gap: 12px;
+    padding: 15px;
+  }
+
+  .schedule-time {
+    min-width: 70px;
+    padding: 12px 5px;
+  }
+}
+
