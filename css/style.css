@@ -1,619 +1,110 @@
-/* =================================
-   暁秀祭2027 共通デザイン（シック・ダーク調）
-================================= */
-
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Noto+Serif+JP:wght@400;600;700;900&display=swap');
-
-:root {
-  --bg-main: #131924;        /* 重厚感のあるダークネイビー */
-  --bg-card: #1c2433;        /* カード用少し明るめのネイビー */
-  --bg-header: #0d121c;      /* ヘッダー用ダークカラー */
-  --accent-gold: #c6a267;    /* 高級感のあるゴールド */
-  --accent-gold-light: #e5cc9f;
-  --text-main: #f0f4f8;      /* メイン文字色（ホワイト系） */
-  --text-sub: #a0aec0;       /* 補足文字色（グレー系） */
-  --border-gold: rgba(198, 162, 103, 0.3);
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+* 暁秀祭2027 - elegant editorial style */
+:root{--ink:#18243a;--muted:#6d7788;--gold:#b89a62;--paper:#fbfaf7;--line:#e7e2d8;--navy:#17243a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Noto Sans JP",sans-serif;line-height:1.8}
+a{color:inherit;text-decoration:none}
+.site-header{height:86px;padding:0 6.5%;display:flex;align-items:center;justify-content:space-between;background:rgba(251,250,247,.97);border-bottom:1px solid var(--line);position:relative;z-index:10}
+.brand{display:flex;flex-direction:column;line-height:1.2}
+.brand-en{font:600 10px "Playfair Display",serif;letter-spacing:.22em;color:var(--gold)}
+.brand-ja{font-size:20px;font-weight:700;letter-spacing:.08em;margin-top:6px}
+.brand-ja b{font:600 17px "Playfair Display",serif;color:var(--gold);margin-left:5px}
+.global-nav{display:flex;align-items:center;gap:clamp(16px,2.5vw,36px)}
+.global-nav a{font-size:12px;letter-spacing:.08em;color:#4d586a;transition:color .2s}
+.global-nav a:hover,.global-nav a.current{color:var(--gold)}
+.menu-toggle{display:none;border:1px solid var(--line);background:transparent;padding:9px 12px;letter-spacing:.12em;color:var(--ink)}
+.hero{height:min(760px,calc(100vh - 86px));min-height:570px;position:relative;overflow:hidden;background:#30394a;color:white}
+.hero-slides,.hero-slide,.hero-shade{position:absolute;inset:0}
+.hero-slide{opacity:0;transition:opacity 1.5s ease;background-position:center;background-size:cover;transform:scale(1.02)}
+.hero-slide.is-active{opacity:1}
+.slide-one{background-image:url("images/photo1.jpg")}
+.slide-two{background-image:url("images/photo2.jpg")}
+.slide-three{background-image:url("images/photo3.jpg")}
+.slide-four{background-image:url("images/photo4.jpg")}
+.slide-five{background-image:url("images/photo5.jpg")}
+.hero-shade{background:linear-gradient(90deg,rgba(13,24,42,.72),rgba(13,24,42,.25) 65%,rgba(13,24,42,.12))}
+.hero-content{position:absolute;left:12%;top:50%;transform:translateY(-48%);max-width:720px}
+.eyebrow,.section-kicker{font:600 11px "Playfair Display",serif;letter-spacing:.24em;color:var(--gold)}
+.hero .eyebrow{color:#e3c994}
+.hero h1{font-size:clamp(48px,8vw,92px);letter-spacing:.08em;line-height:1.2;margin:20px 0}
+.hero h1 span{font:500 .55em "Playfair Display",serif;color:#e2c58d;letter-spacing:.04em}
+.hero-subtitle{font-size:clamp(16px,2vw,21px);letter-spacing:.15em;margin:0 0 18px}
+.event-date{font-size:14px;color:#e5e5e5;letter-spacing:.08em}
+.outline-link{display:inline-flex;gap:32px;align-items:center;border:1px solid rgba(255,255,255,.65);padding:14px 20px;margin-top:22px;font-size:10px;letter-spacing:.16em;transition:.25s}
+.outline-link:hover{background:white;color:var(--ink)}
+.hero-caption{position:absolute;right:6%;bottom:35px;font:11px "Playfair Display",serif;letter-spacing:.18em;color:rgba(255,255,255,.8)}
+.hero-caption span{color:#e2c58d;margin-left:10px}
+.slide-indicators{position:absolute;left:12%;bottom:38px;display:flex;gap:9px}
+.slide-dot{width:24px;height:2px;border:0;background:rgba(255,255,255,.45);padding:0;cursor:pointer}
+.slide-dot.is-active{background:#e2c58d}
+.section-wrap{width:min(1120px,86%);margin-inline:auto}
+.intro{text-align:center;padding:105px 0 65px}
+.section-kicker{margin:0 0 12px}
+.section-title{font-size:clamp(25px,3.2vw,36px);font-weight:500;letter-spacing:.08em;margin:0 0 22px}
+.intro-copy{color:var(--muted);font-size:14px;line-height:2.2}
+.feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding-bottom:110px}
+.feature-card{background:white;border:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;min-height:250px;transition:transform .25s,box-shadow .25s}
+.feature-card:hover{transform:translateY(-4px);box-shadow:0 14px 35px rgba(24,36,58,.08)}
+.feature-wide{grid-column:span 2}
+.feature-image{min-height:230px;background:#d9dce0 center/cover no-repeat}
+.feature-chorus{background-image:linear-gradient(135deg,#aeb9c6,#e8e3d9)}
+.feature-projects{background-image:linear-gradient(135deg,#c7b99e,#eee9df)}
+.feature-videos{background-image:linear-gradient(135deg,#8c9aa9,#d8d9d5)}
+.feature-info{padding:28px 25px;align-self:center}
+.feature-info span,.card-label{font:600 10px "Playfair Display",serif;letter-spacing:.18em;color:var(--gold)}
+.feature-info h3{font-size:22px;letter-spacing:.08em;margin:10px 0}
+.feature-info p{font-size:12px;color:var(--muted);margin:0 0 22px}
+.feature-info b{font-size:10px;letter-spacing:.15em}
+.access-section{background:#f1efe9;padding:85px 0}
+.access-inner{display:grid;grid-template-columns:.8fr 1.2fr;gap:55px;align-items:center}
+.access-name{font-weight:600;margin:28px 0 4px}
+.muted{font-size:13px;color:var(--muted)}
+.text-link{display:inline-block;margin-top:20px;border-bottom:1px solid var(--gold);padding-bottom:4px;font-size:12px}
+.map-frame{height:330px;background:#e1dfd9}
+.map-frame iframe{width:100%;height:100%;border:0}
+.site-footer{background:var(--navy);color:white;text-align:center;padding:42px 20px}
+.footer-brand{font:600 23px "Playfair Display",serif;letter-spacing:.1em}
+.site-footer p{font-size:11px;color:#c5cad2;margin:10px 0 18px}
+.site-footer small{font:10px "Playfair Display",serif;letter-spacing:.16em;color:#aeb6c2}
+.page-hero{min-height:310px;background:linear-gradient(110deg,rgba(20,32,51,.88),rgba(20,32,51,.55)),linear-gradient(135deg,#647184,#b7b2a6);color:white;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.page-hero .eyebrow{color:#e2c58d;margin:0}
+.page-hero h1{font-size:clamp(38px,6vw,58px);font-weight:500;letter-spacing:.12em;margin:12px 0 0}
+.page-hero>p:last-child{font:12px "Playfair Display",serif;letter-spacing:.25em;color:#e2c58d;margin:8px 0}
+.page-content{padding-top:80px;padding-bottom:110px}
+.page-content>.section-kicker,.page-content>.section-title{text-align:center}
+.page-content>.intro-copy{text-align:center;margin-bottom:48px}
+.class-grid,.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:45px}
+.class-card,.project-card,.video-card{background:white;border:1px solid var(--line)}
+.placeholder-image{height:190px;display:grid;place-items:center;background:linear-gradient(135deg,#d9dce0,#f0eee8);color:#87909b;font:600 11px "Playfair Display",serif;letter-spacing:.25em}
+.class-card-body,.project-card-body{padding:23px}
+.class-card h3,.project-card h3,.video-card h3{font-size:19px;margin:8px 0 15px;letter-spacing:.05em}
+.class-card p,.project-card p{font-size:12px;color:var(--muted);line-height:2}
+.class-card p b{color:var(--ink)}
+.project-card dl{border-top:1px solid var(--line);margin:18px 0 0;padding-top:12px}
+.project-card dl div{display:flex;justify-content:space-between;gap:10px;font-size:12px;padding:4px 0}
+.project-card dt{color:var(--muted)}
+.project-card dd{margin:0;text-align:right}
+.notice{font-size:11px;color:var(--muted);text-align:center;margin-top:35px}
+.video-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:45px}
+.video-card{padding-bottom:20px}
+.video-placeholder{aspect-ratio:16/9;background:linear-gradient(135deg,#202d43,#687487);color:white;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.video-placeholder span{font:600 44px "Playfair Display",serif;color:#e2c58d}
+.video-placeholder p{font-size:11px;letter-spacing:.1em}
+.video-card h3,.video-card>p{text-align:center}
+.video-card h3{margin:18px 0 4px}
+.video-card>p{font:10px "Playfair Display",serif;letter-spacing:.18em;color:var(--gold);margin:0}
+@media(max-width:800px){
+ .site-header{height:74px;padding:0 5%}.menu-toggle{display:block}.global-nav{display:none;position:absolute;top:74px;left:0;right:0;background:var(--paper);padding:18px 6%;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:17px}.global-nav.is-open{display:flex}
+ .hero{height:650px;min-height:0}.hero-content{left:7%;right:7%}.slide-indicators{left:7%}.hero-caption{right:7%;font-size:9px}
+ .feature-grid{grid-template-columns:1fr;gap:16px}.feature-wide{grid-column:auto}.feature-card{grid-template-columns:.9fr 1.1fr;min-height:210px}.feature-image{min-height:210px}.feature-info{padding:20px 16px}
+ .access-inner{grid-template-columns:1fr;gap:25px}.map-frame{height:280px}
+ .class-grid,.project-grid{grid-template-columns:1fr 1fr}
 }
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Noto Serif JP', "游明朝", "Yu Mincho", serif;
-  color: var(--text-main);
-  background: var(--bg-main);
-  line-height: 1.8;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-.container {
-  width: min(1160px, 92%);
-  margin: 0 auto;
-}
-
-/* =================================
-   ヘッダー
-================================= */
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  width: 100%;
-  background: rgba(13, 18, 28, 0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border-gold);
-}
-
-.header-inner {
-  width: min(1300px, 94%);
-  min-height: 76px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 25px;
-}
-
-.logo {
-  flex-shrink: 0;
-  color: var(--accent-gold);
-  font-family: 'Noto Serif JP', serif;
-  font-size: 24px;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
-
-.global-nav {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 8px;
-}
-
-.nav-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  padding: 9px 16px;
-  border-radius: 4px;
-  color: var(--text-sub);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  white-space: nowrap;
-  transition: 0.3s;
-}
-
-.nav-link:hover,
-.nav-link.active {
-  color: var(--accent-gold);
-  background: rgba(198, 162, 103, 0.1);
-}
-
-/* =================================
-   トップメインビジュアル（ヒーロー）
-================================= */
-
-.hero {
-  position: relative;
-  min-height: 560px;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  background: radial-gradient(circle at 70% 30%, #1e293b 0%, #0d121c 100%);
-  color: var(--text-main);
-  border-bottom: 1px solid var(--border-gold);
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 0;
-  height: 120px;
-  background: linear-gradient(transparent, var(--bg-main));
-}
-
-.hero-inner {
-  position: relative;
-  z-index: 2;
-  width: min(1160px, 90%);
-  margin: auto;
-  padding: 90px 0;
-}
-
-.hero-label {
-  color: var(--accent-gold);
-  font-family: 'Cinzel', serif;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-}
-
-.hero-title {
-  margin: 20px 0;
-  color: var(--text-main);
-  font-family: 'Noto Serif JP', serif;
-  font-size: clamp(44px, 7.5vw, 88px);
-  font-weight: 900;
-  line-height: 1.2;
-  letter-spacing: 4px;
-}
-
-.hero-title span {
-  color: var(--accent-gold);
-  font-family: 'Cinzel', serif;
-  margin-left: 15px;
-  font-weight: 500;
-}
-
-.hero-subtitle {
-  color: var(--text-sub);
-  font-size: clamp(16px, 2vw, 22px);
-  font-weight: 400;
-  letter-spacing: 2px;
-}
-
-.hero-date {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 10px 24px;
-  border: 1px solid var(--accent-gold);
-  border-radius: 2px;
-  background: rgba(198, 162, 103, 0.08);
-  color: var(--accent-gold-light);
-  font-size: 14px;
-  letter-spacing: 2px;
-}
-
-/* =================================
-   ページ共通タイトル
-================================= */
-
-.page-hero {
-  padding: 90px 20px;
-  text-align: center;
-  background: linear-gradient(180deg, #0d121c 0%, var(--bg-main) 100%);
-  border-bottom: 1px solid var(--border-gold);
-}
-
-.page-hero h1 {
-  color: var(--text-main);
-  font-size: clamp(32px, 5vw, 50px);
-  font-weight: 700;
-  letter-spacing: 3px;
-}
-
-.page-hero p {
-  margin-top: 14px;
-  color: var(--text-sub);
-}
-
-.page-label {
-  color: var(--accent-gold);
-  font-family: 'Cinzel', serif;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 4px;
-}
-
-/* =================================
-   セクション
-================================= */
-
-.content-section,
-.section {
-  width: min(1160px, 92%);
-  margin: 80px auto;
-}
-
-.section-heading {
-  margin-bottom: 40px;
-  text-align: center;
-}
-
-.section-heading h2,
-.content-section h2 {
-  color: var(--accent-gold);
-  font-size: clamp(26px, 3.5vw, 36px);
-  font-weight: 700;
-  letter-spacing: 3px;
-}
-
-.section-heading p {
-  margin-top: 10px;
-  color: var(--text-sub);
-  font-size: 14px;
-}
-
-/* =================================
-   クイックアクセス（メニューカード）
-================================= */
-
-.quick-links {
-  position: relative;
-  z-index: 5;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 16px;
-  width: min(1200px, 94%);
-  margin: -50px auto 80px;
-}
-
-.quick-card {
-  overflow: hidden;
-  border: 1px solid var(--border-gold);
-  border-radius: 8px;
-  background: var(--bg-card);
-  box-shadow: var(--shadow);
-  text-align: center;
-  transition: transform 0.3s, border-color 0.3s;
-}
-
-.quick-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--accent-gold);
-}
-
-.quick-card img {
-  width: 100%;
-  height: 110px;
-  object-fit: cover;
-  opacity: 0.85;
-  transition: opacity 0.3s;
-}
-
-.quick-card:hover img {
-  opacity: 1;
-}
-
-.quick-card span {
-  display: block;
-  padding: 12px 5px;
-  color: var(--text-main);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
-
-/* =================================
-   カード・グリッド
-================================= */
-
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-}
-
-.info-card {
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 8px;
-  background: var(--bg-card);
-  box-shadow: var(--shadow);
-  transition: transform 0.3s, border-color 0.3s;
-}
-
-.info-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--accent-gold);
-}
-
-.info-card img {
-  width: 100%;
-  height: 210px;
-  object-fit: cover;
-  opacity: 0.9;
-}
-
-.card-body {
-  padding: 24px;
-}
-
-.card-body h3 {
-  margin-bottom: 12px;
-  color: var(--accent-gold-light);
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.card-body p {
-  color: var(--text-sub);
-  font-size: 14px;
-}
-
-/* =================================
-   お知らせ
-================================= */
-
-.news-box {
-  padding: 35px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 8px;
-  background: var(--bg-card);
-  box-shadow: var(--shadow);
-}
-
-.news-list {
-  list-style: none;
-}
-
-.news-list li {
-  display: flex;
-  gap: 24px;
-  padding: 18px 5px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  font-size: 14px;
-}
-
-.news-list time {
-  flex-shrink: 0;
-  color: var(--accent-gold);
-  font-family: 'Cinzel', serif;
-  font-weight: 700;
-}
-
-/* =================================
-   カウントダウン
-================================= */
-
-.countdown-card {
-  padding: 40px 20px;
-  border: 1px solid var(--border-gold);
-  border-radius: 8px;
-  background: linear-gradient(135deg, #1e2736, #141b26);
-  box-shadow: var(--shadow);
-  text-align: center;
-}
-
-.countdown-number {
-  color: var(--accent-gold);
-  font-family: 'Cinzel', serif;
-  font-size: clamp(45px, 8vw, 80px);
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-/* =================================
-   写真・マップ
-================================= */
-
-.photo-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.photo-grid img {
-  width: 100%;
-  height: 230px;
-  object-fit: cover;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: var(--shadow);
-}
-
-.map-placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 280px;
-  margin: 25px 0;
-  padding: 25px;
-  border: 1px dashed var(--border-gold);
-  border-radius: 8px;
-  background: rgba(198, 162, 103, 0.04);
-  color: var(--accent-gold);
-  text-align: center;
-}
-
-.school-map-image {
-  width: 100%;
-  max-width: 1000px;
-  height: auto;
-  margin: 25px auto;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: var(--shadow);
-}
-
-/* =================================
-   タイムテーブル
-================================= */
-
-.schedule-list {
-  display: grid;
-  gap: 16px;
-}
-
-.schedule-item {
-  display: flex;
-  gap: 25px;
-  padding: 22px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 8px;
-  background: var(--bg-card);
-  box-shadow: var(--shadow);
-}
-
-.schedule-time {
-  min-width: 110px;
-  color: var(--accent-gold);
-  font-family: 'Cinzel', serif;
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.schedule-content {
-  font-weight: 600;
-}
-
-/* =================================
-   フッター
-================================= */
-
-.site-footer {
-  margin-top: 90px;
-  padding: 40px 20px;
-  background: var(--bg-header);
-  border-top: 1px solid var(--border-gold);
-  color: var(--text-sub);
-  text-align: center;
-}
-
-.site-footer p {
-  font-size: 13px;
-  letter-spacing: 1px;
-}
-
-/* =================================
-   スマートフォン対応
-================================= */
-
-@media (max-width: 900px) {
-  .header-inner {
-    flex-direction: column;
-    gap: 12px;
-    padding: 15px 0;
-  }
-
-  .global-nav {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    width: 100%;
-  }
-
-  .nav-link {
-    min-height: 44px;
-    padding: 8px 4px;
-    font-size: 12px;
-  }
-
-  .quick-links {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .card-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .container {
-    width: 92%;
-  }
-
-  .header-inner {
-    width: 94%;
-  }
-
-  .logo {
-    font-size: 21px;
-  }
-
-  .global-nav {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 7px;
-  }
-
-  .nav-link {
-    min-height: 44px;
-    border-radius: 4px;
-    background: rgba(255, 255, 255, 0.04);
-    font-size: 13px;
-  }
-
-  .hero {
-    min-height: 420px;
-  }
-
-  .hero-inner {
-    padding: 65px 0;
-  }
-
-  .hero-title {
-    font-size: 40px;
-  }
-
-  .quick-links {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    margin-top: -30px;
-    margin-bottom: 50px;
-  }
-
-  .quick-card img {
-    height: 105px;
-  }
-
-  .quick-card span {
-    padding: 10px 3px;
-    font-size: 13px;
-  }
-
-  .content-section,
-  .section {
-    margin: 50px auto;
-  }
-
-  .card-grid,
-  .photo-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .photo-grid img {
-    height: 220px;
-  }
-
-  .info-card img {
-    height: 200px;
-  }
-
-  .news-box {
-    padding: 20px 15px;
-  }
-
-  .news-list li {
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .schedule-item {
-    flex-direction: column;
-    gap: 6px;
-    padding: 18px;
-  }
-
-  .schedule-time {
-    font-size: 16px;
-  }
-
-  .page-hero {
-    padding: 60px 15px;
-  }
-
-  .site-footer {
-    margin-top: 60px;
-  }
+@media(max-width:540px){
+ .hero{height:590px}.hero h1{font-size:48px}.hero-content{top:46%}.hero-caption{display:none}
+ .intro{padding:75px 0 45px}.section-wrap{width:88%}.section-title{font-size:25px}
+ .feature-card,.feature-wide{grid-template-columns:1fr}.feature-image{min-height:180px}.feature-info{padding:22px}
+ .access-section{padding:65px 0}.page-hero{min-height:250px}.page-content{padding-top:60px;padding-bottom:75px}
+ .class-grid,.project-grid,.video-grid{grid-template-columns:1fr}.placeholder-image{height:210px}
+ .desktop-only{display:none}
 }
