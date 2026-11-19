@@ -1,197 +1,100 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="暁秀祭2027の公式サイトです。企画情報や映像、キッチンカー、タイムテーブルなどを紹介します。">
-  <title>暁秀祭2027 公式サイト</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="暁秀祭2027 公式サイト。企画情報、映像、アクセスをご案内します。">
+  <title>暁秀祭2027｜公式サイト</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
-
 <body>
-
-  <!-- ヘッダー -->
   <header class="site-header">
-    <div class="header-inner">
-
-      <a href="index.html" class="logo">暁秀祭2027</a>
-
-      <nav class="global-nav">
-        <a href="index.html" class="nav-link active">ホーム</a>
-        <a href="projects.html" class="nav-link">企画一覧</a>
-        <a href="stage.html" class="nav-link">OP・ED映像</a>
-        <a href="food.html" class="nav-link">キッチンカー</a>
-        <a href="timetable.html" class="nav-link">タイムテーブル</a>
-        <a href="map.html" class="nav-link">校内マップ</a>
-      </nav>
-
-    </div>
+    <a class="brand" href="index.html" aria-label="暁秀祭2027 ホーム">
+      <span class="brand-en">GYOSHU FESTIVAL</span>
+      <span class="brand-ja">暁秀祭 <b>2027</b></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">MENU</button>
+    <nav class="global-nav" aria-label="メインナビゲーション">
+      <a class="current" href="index.html">HOME</a>
+      <a href="chorus.html">中学合唱</a>
+      <a href="projects.html">企画一覧</a>
+      <a href="videos.html">OP・ED映像</a>
+      <a href="#access">ACCESS</a>
+    </nav>
   </header>
 
-
-  <!-- メインビジュアル -->
   <main>
+    <section class="hero" aria-label="暁秀祭2027">
+      <div class="hero-slides" aria-hidden="true">
+        <div class="hero-slide slide-one is-active"></div>
+        <div class="hero-slide slide-two"></div>
+        <div class="hero-slide slide-three"></div>
+        <div class="hero-slide slide-four"></div>
+        <div class="hero-slide slide-five"></div>
+      </div>
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="eyebrow">KATO GAKUEN GYOSHU FESTIVAL</p>
+        <h1>暁秀祭 <span>2027</span></h1>
+        <p class="hero-subtitle">心に残る、特別な一日を。</p>
+        <p class="event-date">開催日：未定</p>
+        <a class="outline-link" href="#contents">EXPLORE THE FESTIVAL <span>↗</span></a>
+      </div>
+      <div class="hero-caption">ANNUAL SCHOOL FESTIVAL <span>2027</span></div>
+      <div class="slide-indicators" aria-label="背景写真の切り替え">
+        <button class="slide-dot is-active" type="button" aria-label="写真1"></button>
+        <button class="slide-dot" type="button" aria-label="写真2"></button>
+        <button class="slide-dot" type="button" aria-label="写真3"></button>
+        <button class="slide-dot" type="button" aria-label="写真4"></button>
+        <button class="slide-dot" type="button" aria-label="写真5"></button>
+      </div>
+    </section>
 
-    <section class="hero">
-      <div class="hero-inner">
+    <section class="intro section-wrap" id="contents">
+      <p class="section-kicker">WELCOME</p>
+      <h2 class="section-title">ようこそ、暁秀祭2027へ。</h2>
+      <p class="intro-copy">生徒たちのアイデアと個性が集まる、暁秀祭。<br class="desktop-only">ここでしか出会えない企画やステージを、ぜひお楽しみください。</p>
+    </section>
 
-        <p class="hero-label">GYOSHU FESTIVAL 2027</p>
+    <section class="feature-grid section-wrap" aria-label="コンテンツ">
+      <a class="feature-card feature-wide" href="chorus.html">
+        <div class="feature-image feature-chorus"></div>
+        <div class="feature-info"><span>01 / CHORUS</span><h3>中学合唱</h3><p>クラスごとの歌声と、込められた思い。</p><b>VIEW MORE ↗</b></div>
+      </a>
+      <a class="feature-card" href="projects.html">
+        <div class="feature-image feature-projects"></div>
+        <div class="feature-info"><span>02 / PROJECTS</span><h3>企画一覧</h3><p>高校模擬店・部活動などの企画を紹介。</p><b>VIEW MORE ↗</b></div>
+      </a>
+      <a class="feature-card" href="videos.html">
+        <div class="feature-image feature-videos"></div>
+        <div class="feature-info"><span>03 / MOVIES</span><h3>OP・ED映像</h3><p>暁秀祭を彩るオープニングとエンディング。</p><b>VIEW MORE ↗</b></div>
+      </a>
+    </section>
 
-        <h1 class="hero-title">
-          暁秀祭<br>
-          2027
-        </h1>
-
-        <p class="hero-subtitle">
-          ここから始まる、特別な文化祭。
-        </p>
-
-        <div class="hero-date">
-          開催日：未定
+    <section class="access-section" id="access">
+      <div class="section-wrap access-inner">
+        <div>
+          <p class="section-kicker">ACCESS</p>
+          <h2 class="section-title">会場・アクセス</h2>
+          <p class="access-name">加藤学園暁秀中学校・高等学校</p>
+          <p class="muted">〒410-0011 静岡県沼津市岡宮字中見代1361-1</p>
+          <a class="text-link" href="https://www.google.com/maps/search/?api=1&query=加藤学園暁秀中学校・高等学校" target="_blank" rel="noopener">Googleマップで開く ↗</a>
         </div>
-
-      </div>
-    </section>
-
-
-    <!-- 6つのメニュー -->
-    <section class="quick-links">
-
-      <a href="index.html" class="quick-card">
-        <div style="height:110px;background:linear-gradient(135deg,#b9dcff,#e8f5ff);display:flex;align-items:center;justify-content:center;color:#1765c5;font-size:42px;font-weight:900;">01</div>
-        <span>ホーム</span>
-      </a>
-
-      <a href="projects.html" class="quick-card">
-        <div style="height:110px;background:linear-gradient(135deg,#c7e6ff,#e5f3ff);display:flex;align-items:center;justify-content:center;color:#1765c5;font-size:42px;font-weight:900;">02</div>
-        <span>企画一覧</span>
-      </a>
-
-      <a href="stage.html" class="quick-card">
-        <div style="height:110px;background:linear-gradient(135deg,#c5d9ff,#e9eaff);display:flex;align-items:center;justify-content:center;color:#1765c5;font-size:42px;font-weight:900;">03</div>
-        <span>OP・ED映像</span>
-      </a>
-
-      <a href="food.html" class="quick-card">
-        <div style="height:110px;background:linear-gradient(135deg,#ffe2bb,#fff4dc);display:flex;align-items:center;justify-content:center;color:#bd7534;font-size:42px;font-weight:900;">04</div>
-        <span>キッチンカー</span>
-      </a>
-
-      <a href="timetable.html" class="quick-card">
-        <div style="height:110px;background:linear-gradient(135deg,#d3e9ff,#edf7ff);display:flex;align-items:center;justify-content:center;color:#1765c5;font-size:42px;font-weight:900;">05</div>
-        <span>タイムテーブル</span>
-      </a>
-
-      <a href="map.html" class="quick-card">
-        <div style="height:110px;background:linear-gradient(135deg,#c9e9dd,#e9f8f0);display:flex;align-items:center;justify-content:center;color:#32866b;font-size:42px;font-weight:900;">06</div>
-        <span>校内マップ</span>
-      </a>
-
-    </section>
-
-
-    <!-- 昨年度の写真 -->
-    <section class="content-section">
-
-      <div class="section-heading">
-        <p class="page-label">PHOTO GALLERY</p>
-        <h2>昨年度の写真</h2>
-        <p>昨年度の暁秀祭の思い出を振り返ろう。</p>
-      </div>
-
-      <div class="photo-grid">
-
-        <div class="map-placeholder">
-          昨年度の写真①
+        <div class="map-frame">
+          <iframe title="加藤学園暁秀中学校・高等学校の地図" src="https://www.google.com/maps?q=加藤学園暁秀中学校・高等学校&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-
-        <div class="map-placeholder">
-          昨年度の写真②
-        </div>
-
-        <div class="map-placeholder">
-          昨年度の写真③
-        </div>
-
       </div>
-
     </section>
-
-
-    <!-- カウントダウン -->
-    <section class="content-section">
-
-      <div class="section-heading">
-        <p class="page-label">COUNTDOWN</p>
-        <h2>開催まであと...</h2>
-      </div>
-
-      <div class="countdown-card">
-        <p>暁秀祭2027 開催日</p>
-        <div class="countdown-number">未定</div>
-        <p>開催日が決まり次第、カウントダウンを開始します。</p>
-      </div>
-
-    </section>
-
-
-    <!-- お知らせ -->
-    <section class="content-section">
-
-      <div class="section-heading">
-        <p class="page-label">NEWS</p>
-        <h2>お知らせ</h2>
-        <p>暁秀祭2027の最新情報をお届けします。</p>
-      </div>
-
-      <div class="news-box">
-
-        <ul class="news-list">
-          <li>
-            <time>2026.11</time>
-            <span>暁秀祭2027公式サイトを準備中です。</span>
-          </li>
-
-          <li>
-            <time>未定</time>
-            <span>開催日が決まり次第、お知らせします。</span>
-          </li>
-
-          <li>
-            <time>未定</time>
-            <span>企画情報は順次公開予定です。</span>
-          </li>
-        </ul>
-
-      </div>
-
-    </section>
-
-
-    <!-- アクセス -->
-    <section class="content-section">
-
-      <div class="section-heading">
-        <p class="page-label">ACCESS</p>
-        <h2>アクセス</h2>
-        <p>暁秀祭の会場へのアクセス情報です。</p>
-      </div>
-
-      <div class="map-placeholder">
-        <p>アクセス情報・Googleマップ掲載予定</p>
-      </div>
-
-    </section>
-
   </main>
 
-
-  <!-- フッター -->
   <footer class="site-footer">
-    <p>暁秀祭2027 公式サイト</p>
-    <p>© 暁秀祭2027</p>
+    <a class="footer-brand" href="index.html">暁秀祭 2027</a>
+    <p>加藤学園暁秀中学校・高等学校 文化祭</p>
+    <small>© 2027 GYOSHU FESTIVAL</small>
   </footer>
-
 </body>
 </html>
