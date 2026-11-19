@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>中学合唱｜暁秀祭2027</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"><script src="script.js" defer></script>
+</head>
+<body>
+<header class="site-header"><a class="brand" href="index.html"><span class="brand-en">GYOSHU FESTIVAL</span><span class="brand-ja">暁秀祭 <b>2027</b></span></a><button class="menu-toggle" type="button" aria-expanded="false">MENU</button><nav class="global-nav"><a href="index.html">HOME</a><a class="current" href="chorus.html">中学合唱</a><a href="projects.html">企画一覧</a><a href="videos.html">OP・ED映像</a><a href="index.html#access">ACCESS</a></nav></header>
+<main>
+  <section class="page-hero page-hero-chorus"><p class="eyebrow">JUNIOR HIGH SCHOOL</p><h1>中学合唱</h1><p>CHORUS</p></section>
+  <section class="section-wrap page-content"><p class="section-kicker">CLASS PERFORMANCE</p><h2 class="section-title">クラスごとの合唱紹介</h2><p class="intro-copy">各クラスの歌う曲や意気込みを紹介します。</p>
+    <div class="class-grid">
+      <article class="class-card"><div class="placeholder-image">PHOTO</div><div class="class-card-body"><span class="card-label">JUNIOR HIGH</span><h3>中学1年</h3><p><b>歌う曲</b>：曲名を入力してください</p><p><b>意気込み</b>：クラスの意気込みを入力してください。</p></div></article>
+      <article class="class-card"><div class="placeholder-image">PHOTO</div><div class="class-card-body"><span class="card-label">JUNIOR HIGH</span><h3>中学2年</h3><p><b>歌う曲</b>：曲名を入力してください</p><p><b>意気込み</b>：クラスの意気込みを入力してください。</p></div></article>
+      <article class="class-card"><div class="placeholder-image">PHOTO</div><div class="class-card-body"><span class="card-label">JUNIOR HIGH</span><h3>中学3年</h3><p><b>歌う曲</b>：曲名を入力してください</p><p><b>意気込み</b>：クラスの意気込みを入力してください。</p></div></article>
+    </div>
+  </section>
+</main><footer class="site-footer"><a class="footer-brand" href="index.html">暁秀祭 2027</a><small>© 2027 GYOSHU FESTIVAL</small></footer>
+</body></html>
